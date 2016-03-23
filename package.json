@@ -47,7 +47,7 @@
     "handlebars": "^4.0.5",
     "handlebars-loader": "^1.1.4",
     "prismjs": "^1.4.1",
-    "radium": "FormidableLabs/radium",
+    "radium": "latest",
     "radium-grid": "^1.0.9",
     "raw-loader": "0.5.1",
     "react": "0.14.5",

@@ -6,7 +6,7 @@ import settings from "./radium-settings";
 
 // Stylesheet
 
-{
+export default {
  "*, *:before, *:after": {
   WebkitBoxSizing: "inherit",
   MozBoxSizing: "inherit",

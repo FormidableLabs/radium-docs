@@ -6,6 +6,7 @@ import Prism from "prismjs";
 import jsx from "prismjs/components/prism-jsx";
 import sh from "prismjs/components/prism-bash";
 import yaml from "prismjs/components/prism-yaml";
+import as from "prismjs/components/prism-actionscript";
 /* eslint-enable no-unused-vars */
 
 import radiumREADME from "radium/README.md";
@@ -14,6 +15,7 @@ import docsREADME from "../../README.md";
 class Docs extends React.Component {
   componentDidMount() {
     Prism.highlightAll();
+    console.log(Prism.languages);
   }
   render() {
     return (
