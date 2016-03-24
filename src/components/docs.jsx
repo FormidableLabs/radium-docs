@@ -15,13 +15,12 @@ import docsREADME from "../../README.md";
 class Docs extends React.Component {
   componentDidMount() {
     Prism.highlightAll();
-    console.log(Prism.languages);
   }
   render() {
     return (
-      <div>
-        <Ecology overview={radiumREADME} />
+      <div className="Copy">
         <Ecology overview={docsREADME} />
+        <Ecology overview={radiumREADME} />
       </div>
     );
   }
