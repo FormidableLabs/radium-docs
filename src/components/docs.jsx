@@ -10,7 +10,6 @@ import as from "prismjs/components/prism-actionscript";
 /* eslint-enable no-unused-vars */
 
 import radiumREADME from "radium/README.md";
-import docsREADME from "../../README.md";
 
 class Docs extends React.Component {
   componentDidMount() {
@@ -18,8 +17,7 @@ class Docs extends React.Component {
   }
   render() {
     return (
-      <div className="Copy">
-        <Ecology overview={docsREADME} />
+      <div>
         <Ecology overview={radiumREADME} />
       </div>
     );

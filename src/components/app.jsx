@@ -1,61 +1,78 @@
 import React from "react";
 import Radium, { Style, StyleRoot } from "radium";
 import ga from "react-ga";
-// const OutboundLink = ga.OutboundLink;
 
 // Child components
-// import Diagram from "./diagram-flavors";
 import Docs from "./docs";
 import Hero from "./hero";
 import { Header, Footer } from "formidable-landers";
 
 // Variables
 import settings from "../radium-settings";
-import theme from "../radium-styles";
+import stylesheet from "../radium-styles";
 
 class App extends React.Component {
   componentDidMount() {
     ga.initialize("UA-43290258-1");
   }
 
-  getLightLinkStyles() {
+  getStyles() {
     return {
-      color: "#fff"
-    };
-  }
-
-  getBackgroundSkewStyles() {
-    return {
-      zIndex: "-1",
-      position: "absolute",
-      top: "0",
-      left: "0",
-      right: "0",
-      height: "100%",
-      transformOrigin: "top left",
-      transform: "skew(0deg, -24deg)",
-      background: `linear-gradient(0deg, ${settings.white}, ${settings.gray})`
+      headerLink: {
+        color: settings.lightGray,
+        fontFamily: settings.monospace,
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased",
+        transition: "color 0.195s ease-in",
+        textDecoration: "none",
+        ":hover": {
+          color: settings.white,
+          transition: "color 0.225s ease-out"
+        }
+      },
+      footerLink: {
+        color: settings.red,
+        transition: "color 0.195s ease-in",
+        textDecoration: "none",
+        ":hover": {
+          color: settings.black,
+          transition: "color 0.225s ease-out"
+        }
+      },
+      footer: {
+        fontFamily: settings.monospace,
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased",
+        fontSize: "16px",
+        letterSpacing: "normal",
+        padding: "4em 1em"
+      }
     };
   }
 
   render() {
+    const styles = this.getStyles();
+
     return (
       <StyleRoot>
-        <Header backgroundColor={settings.darkerJet} linkStyles={this.getLightLinkStyles()} />
+        <Header
+          backgroundColor={settings.charcoal}
+          linkStyles={styles.headerLink}
+          styleOverrides={{padding: "1.5rem"}}
+        />
         <Hero />
-        <main className="Container">
-          <div className="Row">
-            <Docs/>
-          </div>
+        <main>
+          <Docs />
         </main>
         <Footer
-          backgroundColor={settings.white}
-          logoColor="white"
-          linkStyles={this.getLightLinkStyles()}
+          backgroundColor={settings.lightGray}
+          logoColor="black"
+          linkStyles={styles.footerLink}
+          styleOverrides={styles.footer}
         >
-          <p>Builder is a trademark of Formidable Labs, Inc.</p>
+          <p style={{marginTop: "2.5em", fontSize: "14px"}}>Radium is a trademark of Formidable Labs, Inc.</p>
         </Footer>
-        <Style rules={theme} />
+        <Style rules={stylesheet} />
       </StyleRoot>
     );
   }
