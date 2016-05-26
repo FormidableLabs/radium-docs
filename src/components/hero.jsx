@@ -28,7 +28,7 @@ class Hero extends React.Component {
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "space-between",
-        margin: 0,
+        margin: "auto",
         padding: 0,
         width: "auto"
       },
@@ -72,6 +72,7 @@ class Hero extends React.Component {
         margin: 0
       },
       nav: {
+        marginTop: "auto",
         maxWidth: "840px",
         width: "100%"
       },
