@@ -3,21 +3,24 @@ module.exports = {
   // --------
   // Fonts
   // --------
-  sansSerif: "'Whitney SSm A', 'Whitney SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-  monospace: "'Source Code Pro', Consolas, 'Inconsolata', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Courier New', 'Courier', monospace",
+  sansSerif: "'sharp', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+  serif: "'tiempos', 'Source Serif Pro', Georgia, serif",
+  monospace: "'akkurat', 'Courier New', 'Courier', monospace",
+  code: "'Source Code Pro', Consolas, 'Inconsolata', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Courier New', 'Courier', monospace",
   // --------
   // Colors
   // --------
-  // Navy
-  darkNavy: "#16191F",
-  navy: "#2b303b",
-  // Accent
-  darkRed: "#992720",
-  red: "#B22D26",
-  lightRed: "#CC342B",
-  brightRed: "#FF4136",
+  // REALLY DARK GRAYS!
+  black: "#050505",
+  darkCharcoal: "#161616",
+  charcoal: "#272727",
+  lightCharcoal: "#404040",
+  // REALLY LIGHT GRAYS!
+  lightGray: "#cecece",
+  lighterGray: "#eee",
+  white: "#fafafa",
   // Formidable Reds
-  brandRed: "#bd1e13",
+  red: "#bd1e13",
   // --------
   // Media Queries
   // --------
