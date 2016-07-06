@@ -56,7 +56,7 @@ class App extends React.Component {
     return (
       <StyleRoot>
         <Header
-          backgroundColor={settings.charcoal}
+          background={settings.charcoal}
           linkStyles={styles.headerLink}
           styleOverrides={{padding: "1.5rem"}}
         />
@@ -65,7 +65,7 @@ class App extends React.Component {
           <Docs />
         </main>
         <Footer
-          backgroundColor={settings.lightGray}
+          background={settings.lightGray}
           logoColor="black"
           linkStyles={styles.footerLink}
           styleOverrides={styles.footer}
