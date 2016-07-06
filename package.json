@@ -34,11 +34,10 @@
     "prismjs": "^1.4.1",
     "radium": "latest",
     "radium-grid": "^2.0.1",
-    "react": "0.14.5",
-    "react-dom": "0.14.5",
-    "react-ga": "^1.2.0",
+    "react": "15.2.0",
+    "react-dom": "15.2.0",
+    "react-ga": "^1.5.0",
     "react-router": "^2.0.1",
-    "scroll-behavior": "^0.3.3",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
   }
