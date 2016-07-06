@@ -25,7 +25,7 @@
   "dependencies": {
     "babel-preset-stage-1": "^6.5.0",
     "builder": "^2.9.1",
-    "builder-docs-archetype": "^1.0.0",
+    "builder-docs-archetype": "^1.0.5",
     "chai": "^3.2.0",
     "ecology": "^1.5.0",
     "formidable-landers": "^3.0.1",
@@ -33,7 +33,7 @@
     "marked": "^0.3.5",
     "prismjs": "^1.4.1",
     "radium": "latest",
-    "radium-grid": "^1.0.9",
+    "radium-grid": "^2.0.1",
     "react": "0.14.5",
     "react-dom": "0.14.5",
     "react-ga": "^1.2.0",
