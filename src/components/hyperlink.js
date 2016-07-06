@@ -43,13 +43,14 @@ class Hyperlink extends React.Component {
       this.props.theme && styles[this.props.theme],
       this.props.style
     ];
+    const { destination, theme, ...cleanedProps } = this.props;
 
     if (this.props.destination === "internal") {
       return (
         <RadiumLink
           style={resolvedStyles}
           to={this.props.href}
-          {...this.props}
+          {...cleanedProps}
         >
           {this.props.children}
         </RadiumLink>
@@ -61,7 +62,7 @@ class Hyperlink extends React.Component {
         style={resolvedStyles}
         to={this.props.href}
         eventLabel={this.props.href}
-        {...this.props}
+        {...cleanedProps}
       >
         {this.props.children}
       </RadiumOutboundLink>
