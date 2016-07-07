@@ -1,44 +1,30 @@
 import React from "react";
 import Radium from "radium";
-import RadiumLink from "../../components/hyperlink";
-
-import settings from "../../radium-settings";
-
-// Child components
 import Hero from "../../components/hero";
-import { Header, Footer } from "formidable-landers";
+
+import theme from "../../radium-theme";
 
 class Home extends React.Component {
+
   getStyles() {
     return {
-      headerLink: {
-        color: settings.lightGray,
-        fontFamily: settings.monospace,
-        MozOsxFontSmoothing: "grayscale",
-        WebkitFontSmoothing: "antialiased",
-        transition: "color 0.195s ease-in",
-        textDecoration: "none",
-        ":hover": {
-          color: settings.white,
-          transition: "color 0.225s ease-out"
-        }
+      section: {
+        paddingBottom: `${theme.gutter * 2}px`
       },
-      footerLink: {
-        color: settings.red,
-        transition: "color 0.195s ease-in",
-        textDecoration: "none",
-        ":hover": {
-          color: settings.black,
-          transition: "color 0.225s ease-out"
-        }
+      content: {
+        padding: `0px ${theme.gutter}px`
       },
-      footer: {
-        fontFamily: settings.monospace,
-        MozOsxFontSmoothing: "grayscale",
-        WebkitFontSmoothing: "antialiased",
-        fontSize: "16px",
-        letterSpacing: "normal",
-        padding: "4em 1em"
+      contentBlock: {
+        margin: `${theme.gutter}px auto`,
+        maxWidth: "620px"
+      },
+      displayCopy: {
+        color: theme.charcoal,
+        fontFamily: theme.sansSerif
+      },
+      copy: {
+        color: theme.darkCharcoal,
+        fontFamily: theme.serif
       }
     };
   }
@@ -47,28 +33,30 @@ class Home extends React.Component {
     const styles = this.getStyles();
 
     return (
-      <div>
-        <Header
-          background={settings.charcoal}
-          linkStyles={styles.headerLink}
-          styleOverrides={{padding: "1.5rem"}}
-        />
+      <section style={styles.section}>
         <Hero />
-        <RadiumLink
-          destination="internal"
-          href="/docs"
-        >
-        Docs
-        </RadiumLink>
-        <Footer
-          background={settings.lightGray}
-          logoColor="black"
-          linkStyles={styles.footerLink}
-          styleOverrides={styles.footer}
-        >
-          <p style={{marginTop: "2.5em", fontSize: "14px"}}>Radium is a trademark of Formidable Labs, Inc.</p>
-        </Footer>
-      </div>
+        <section id="whyRadium" style={styles.content}>
+          <section style={styles.contentBlock}>
+            <h1 style={[styles.displayCopy, { textAlign: "center" }]}>Why Radium</h1>
+            <p style={styles.copy}>Radium unlocks the power of React & inline styling by enabling support for CSS psuedo selectors, media queries, vendor-prefixing, and much more through a simple interface.</p>
+          </section>
+          <section style={styles.contentBlock}>
+            <h3 style={[styles.displayCopy, { textAlign: "center" }]}>Familiar Styling</h3>
+            <p style={styles.copy}>Familarity example..</p>
+          </section>
+          <section style={styles.contentBlock}>
+            <h3 style={[styles.displayCopy, { textAlign: "center" }]}>Psuedo & Browser State Selectors</h3>
+            <p style={styles.copy}>Media queries..</p>
+          </section>
+          <section style={styles.contentBlock}>
+            <h3 style={[styles.displayCopy, { textAlign: "center" }]}>Using Radium</h3>
+            <p style={styles.copy}>Using example..</p>
+          </section>
+        </section>
+        <section id="docs" style={styles.content}>
+          <p style={styles.copy}>Link to docs here..</p>
+        </section>
+      </section>
     );
   }
 }

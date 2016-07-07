@@ -3,7 +3,7 @@ import Radium from "radium";
 import { OutboundLink } from "react-ga";
 import { Link } from "react-router";
 
-import settings from "../radium-settings";
+import settings from "../radium-theme";
 
 const RadiumLink = Radium(Link);
 const RadiumOutboundLink = Radium(OutboundLink);

@@ -2,7 +2,7 @@ import React from "react";
 import Radium from "radium";
 
 import RadLink from "./hyperlink";
-import settings from "../radium-settings";
+import settings from "../radium-theme";
 import RADLOGO from "../../static/logo.svg";
 import GITHUBLOGO from "../../static/logo-github.svg";
 

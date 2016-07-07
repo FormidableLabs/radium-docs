@@ -2,7 +2,7 @@
 // RADIUM THEME
 // -------------------------------
 // Settings
-import settings from "./radium-settings";
+import settings from "./radium-theme";
 
 // For both akkurat & sharp sans no2 bold:
 // MozOsxFontSmoothing: "grayscale",
@@ -39,6 +39,10 @@ export default {
     marginTop: "1.25rem",
     marginBottom: 0
   },
+  p: {
+    fontSize: "1rem",
+    lineHeight: 1.4
+  },
   img: {
     maxWidth: "100%"
   },
@@ -62,6 +66,10 @@ export default {
   },
   mediaQueries: {
     [settings.mediaSizes.medium]: {
+      p: {
+        fontSize: "1.2rem",
+        lineHeight: 1.4
+      },
       "h1": {
         fontSize: "3.75rem"
       },
@@ -155,11 +163,5 @@ export default {
   ".highlight code": {
     background: "transparent",
     padding: 0
-  },
-  "#radium-example": {
-    background: "#eee",
-    padding: 24,
-    margin: "24px -24px",
-    textAlign: "center"
   }
 };

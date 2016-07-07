@@ -22,6 +22,10 @@ module.exports = {
   // Formidable Reds
   red: "#bd1e13",
   // --------
+  // Layout
+  // --------
+  gutter: 20,
+  // --------
   // Media Queries
   // --------
   mediaSizes: {
