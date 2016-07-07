@@ -43,6 +43,10 @@ export default {
     fontSize: "1rem",
     lineHeight: 1.4
   },
+  li: {
+    fontSize: "1rem",
+    lineHeight: 1.8
+  },
   img: {
     maxWidth: "100%"
   },
@@ -67,8 +71,10 @@ export default {
   mediaQueries: {
     [theme.mediaSizes.medium]: {
       p: {
-        fontSize: "1.2rem",
-        lineHeight: 1.4
+        fontSize: "1.2rem"
+      },
+      li: {
+        fontSize: "1.2rem"
       },
       "h1": {
         fontSize: "3.75rem"

@@ -94,7 +94,8 @@ class Hero extends React.Component {
         width: "100%"
       },
       navListItem: {
-        padding: "1.5em"
+        padding: "1.5em",
+        fontSize: "14px"
       },
       logoGithub: {
         color: "inherit",
