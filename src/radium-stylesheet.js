@@ -81,87 +81,19 @@ export default {
       },
       "h4, h5, h6": {
         fontSize: "1.5rem"
-      },
-      ".Ecology": {
-        fontSize: "1.3125rem"
-      },
-      ".Ecology .highlight": {
-        margin: "36px -24px"
-      },
-      ".Ecology .highlight pre": {
-        padding: 24
       }
     }
   },
-  ".Ecology a": {
-    borderBottomWidth: "1px",
-    borderBottomStyle: "solid",
-    borderBottomColor: settings.red,
-    color: settings.red,
-    fontWeight: 700,
-    lineHeight: 1,
-    textDecoration: "none",
-    transition: "all 0.195s ease-in"
+  ".Interactive .playground": {
+    display: "flex"
   },
-  ".Ecology a:hover, .Ecology a:focus": {
-    borderBottomColor: settings.black,
-    color: settings.black,
-    transition: "all 0.225s ease-out"
+  ".playgroundCode": {
+    order: "1",
+    padding: "10px"
   },
-  ".Ecology .highlight": {
-    marginLeft: -16,
-    marginRight: -16
-  },
-  ".Ecology pre": {
-    backgroundColor: settings.lighterGray,
-    fontFamily: settings.code
-  },
-  ".Ecology .highlight pre": {
-    marginBottom: 0,
-    background: settings.darkCharcoal,
-    color: settings.white,
-    fontFamily: settings.code,
-    fontSize: 16,
-    lineHeight: 1.2,
-    overflow: "auto",
-    padding: 16
-  },
-  ".Ecology ul": {
-    paddingLeft: 24,
-    listStyle: "none"
-  },
-  ".Ecology ul > li": {
-    position: "relative"
-  },
-  ".Ecology ul > li + li": {
-    marginTop: 10
-  },
-  ".Ecology ul > li:before": {
-    content: "\"\"",
-    width: "1em",
-    height: "1em",
-    display: "block",
-    position: "absolute",
-    fontSize: 8,
-    borderRadius: "50%",
-    border: `1px solid ${settings.red}`,
-    left: -24,
-    top: 11
-  },
-  ".Ecology li > ul": {
-    marginTop: 10,
-    marginBottom: 0
-  },
-  ".Ecology code": {
-    fontFamily: settings.monospace,
-    background: "#eee",
-    padding: "0 3px"
-  },
-  ".Ecology pre code": {
-    background: "transparent"
-  },
-  ".highlight code": {
-    background: "transparent",
-    padding: 0
+  ".playgroundPreview": {
+    order: "0",
+    padding: "10px",
+    background: "#333"
   }
 };

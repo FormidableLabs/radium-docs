@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Radium from "radium";
 import Ecology from "ecology";
+import Button from "../demos/button";
+import color from "color";
 
 // Settings
 import theme from "../../../radium-theme";
@@ -21,7 +23,7 @@ class Demo extends React.Component {
       <div style={[this.props.style, styles.container]}>
         <Ecology
           overview={this.props.src}
-          scope={{React, ReactDOM, Radium}}
+          scope={{React, ReactDOM, Radium, Button, color}}
           playgroundtheme="elegant"
         />
       </div>

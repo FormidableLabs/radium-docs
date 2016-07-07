@@ -1,6 +1,7 @@
 import React from "react";
 import Radium from "radium";
 import Hero from "./components/hero";
+import Demo from "./components/demo";
 
 import theme from "../../radium-theme";
 
@@ -42,7 +43,7 @@ class Home extends React.Component {
           </section>
           <section style={styles.contentBlock}>
             <h3 style={[styles.displayCopy, { textAlign: "center" }]}>Familiar Styling</h3>
-            <p style={styles.copy}>Familarity example..</p>
+            <Demo src={require("!!raw!./demos/familiar.md")} />
           </section>
           <section style={styles.contentBlock}>
             <h3 style={[styles.displayCopy, { textAlign: "center" }]}>Psuedo & Browser State Selectors</h3>
