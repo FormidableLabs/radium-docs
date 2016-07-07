@@ -24,9 +24,6 @@ module.exports = {
   // --------
   // Media Queries
   // --------
-  mediaQueries: {
-    medium: "@media only screen and (min-width: 44em)"
-  },
   mediaSizes: {
     medium: "only screen and (min-width: 44em)"
   }
