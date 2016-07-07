@@ -3,8 +3,8 @@ import { Route, IndexRoute } from "react-router";
 
 // Components
 import App from "./components/app";
-import Home from "./views/home";
-import Docs from "./views/docs";
+import Home from "./views/home/index";
+import Docs from "./views/docs/index";
 
 module.exports = (
   <Route path="/" component={App}>

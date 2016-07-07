@@ -1,10 +1,11 @@
 import React from "react";
 import Radium from "radium";
+import RadiumLink from "../../components/hyperlink";
 
-import settings from "../radium-settings";
+import settings from "../../radium-settings";
 
 // Child components
-import Hero from "../components/hero";
+import Hero from "../../components/hero";
 import { Header, Footer } from "formidable-landers";
 
 class Home extends React.Component {
@@ -53,6 +54,12 @@ class Home extends React.Component {
           styleOverrides={{padding: "1.5rem"}}
         />
         <Hero />
+        <RadiumLink
+          destination="internal"
+          href="/docs"
+        >
+        Docs
+        </RadiumLink>
         <Footer
           background={settings.lightGray}
           logoColor="black"
