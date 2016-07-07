@@ -1,8 +1,8 @@
 // -------------------------------
 // RADIUM THEME
 // -------------------------------
-// Settings
-import settings from "./radium-theme";
+// theme
+import theme from "./radium-theme";
 
 // For both akkurat & sharp sans no2 bold:
 // MozOsxFontSmoothing: "grayscale",
@@ -16,15 +16,15 @@ export default {
     boxSizing: "inherit"
   },
   html: {
-    backgroundColor: settings.black,
+    backgroundColor: theme.black,
     msTextSizeAdjust: "100%",
     WebkitTextSizeAdjust: "100%"
   },
   body: {
-    backgroundColor: settings.white,
+    backgroundColor: theme.white,
     boxSizing: "border-box",
-    color: settings.black,
-    fontFamily: settings.serif,
+    color: theme.black,
+    fontFamily: theme.serif,
     fontSize: "16px",
     lineHeight: 1.4,
     margin: 0
@@ -65,7 +65,7 @@ export default {
     display: "none"
   },
   mediaQueries: {
-    [settings.mediaSizes.medium]: {
+    [theme.mediaSizes.medium]: {
       p: {
         fontSize: "1.2rem",
         lineHeight: 1.4
@@ -84,16 +84,161 @@ export default {
       }
     }
   },
+  /*
+   * Interactive/Component Playground
+   * .Interactive
+   * |- .playground
+   *    |- .playgroundCode
+   *    |  |- .playgroundStage
+   *    |- .playgroundPreview
+   *       |- div
+   *          |- .playgroundError
+   *          |- .previewArea
+   */
   ".Interactive .playground": {
-    display: "flex"
+    display: "flex",
+    flexDirection: "column",
+    padding: 0
   },
-  ".playgroundCode": {
+  ".Interactive .playgroundCode": {
     order: "1",
-    padding: "10px"
+    padding: 0,
+    margin: 0
   },
-  ".playgroundPreview": {
+  ".playgroundCode .playgroundStage": {
+    position: "relative",
+    boxSizing: "border-box",
+    padding: "10px",
+    margin: 0
+  },
+  ".Interactive .playgroundStage:after": {
+    content: "'EDITOR'",
+    position: "absolute",
+    right: 0,
+    top: 0,
+    color: theme.codeMirror.gray,
+    fontFamily: theme.monospace,
+    letterSpacing: "0.09em",
+    fontSize: "12px",
+    margin: `10px`,
+    lineHeight: 1
+  },
+  ".Interactive .playgroundPreview": {
+    position: "relative",
+    textAlign: "center",
     order: "0",
     padding: "10px",
-    background: "#333"
+    background: theme.lighterGray
+  },
+  ".Interactive .playgroundPreview:after": {
+    content: "'PREVIEW'",
+    position: "absolute",
+    right: 0,
+    top: 0,
+    color: theme.lightGray,
+    fontFamily: theme.monospace,
+    letterSpacing: "0.09em",
+    fontSize: "12px",
+    margin: `10px`,
+    lineHeight: 1
+  },
+  ".Interactive .playgroundError": {
+    background: theme.paleRed,
+    color: theme.whiteSand,
+    fontFamily: theme.monospace,
+    fontSize: "1rem",
+    fontWeight: "normal",
+    lineHeight: 1.2,
+    overflow: "scroll",
+    padding: `${theme.gutter}px`,
+    textAlign: "left",
+    whiteSpace: "pre",
+    width: "100%"
+  },
+  ".Interactive pre, .CodeMirror-code": {
+    fontFamily: theme.monospace,
+    fontSize: "14px",
+    lineHeight: 1.2
+  },
+  ".CodeMirror": {
+    background: "none !important"
+  },
+  /**
+   * Ecology Playground Theme/Color Palette
+   */
+  ".playgroundStage": {
+    background: theme.codeMirror.bg,
+    color: theme.white,
+    transition: "background-color 195ms ease-in"
+  },
+  ".playgroundStage.ReactCodeMirror--focused": {
+    background: theme.codeMirror.bgFocused,
+    transition: "background-color 250ms ease-out"
+  },
+  ".cm-s-elegant div.CodeMirror-cursor": {
+    borderLeft: "1px solid white !important"
+  },
+  ".cm-s-elegant div.CodeMirror-selected": {
+    background: `${theme.codeMirror.selected} !important`
+  },
+  ".cm-s-elegant span.cm-comment": {
+    color: theme.codeMirror.gray
+  },
+  ".cm-s-elegant span.cm-operater": {
+    color: theme.codeMirror.softCyan
+  },
+  ".cm-s-elegant span.cm-keyword": {
+    color: theme.codeMirror.blue
+  },
+  ".cm-s-elegant span.cm-atom": {
+    color: theme.codeMirror.cyan
+  },
+  ".cm-s-elegant span.cm-def": {
+    color: theme.codeMirror.cement
+  },
+  ".cm-s-elegant span.cm-attribute": {
+    color: theme.codeMirror.yellow
+  },
+  ".cm-s-elegant span.cm-variable": {
+    color: theme.codeMirror.lime
+  },
+  ".cm-s-elegant span.cm-variable-2": {
+    color: theme.codeMirror.cement
+  },
+  ".cm-s-elegant span.cm-string": {
+    color: theme.codeMirror.lightCement
+  },
+  ".cm-s-elegant span.cm-string-2": {
+    color: theme.codeMirror.lime
+  },
+  ".cm-s-elegant span.cm-number": {
+    color: theme.codeMirror.purple
+  },
+  ".cm-s-elegant span.cm-tag": {
+    color: theme.codeMirror.red
+  },
+  ".cm-s-elegant span.cm-property": {
+    color: theme.codeMirror.cyan
+  },
+  ".cm-s-elegant span.cm-qualifier": {
+    color: theme.codeMirror.orange
+  },
+  ".cm-s-elegant span.cm-meta": {
+    color: theme.codeMirror.cyan
+  },
+  ".cm-s-elegant span.cm-header": {
+    color: theme.codeMirror.red
+  },
+  ".cm-s-elegant span.cm-operator, .CodeMirror pre": {
+    color: theme.codeMirror.cement
+  },
+  ".cm-s-elegant span.CodeMirror-matchingbracket": {
+    boxSizing: "border-box",
+    background: "transparent",
+    borderBottom: "1px solid"
+  },
+  ".cm-s-elegant span.CodeMirror-nonmatchingbracket": {
+    borderBottom: "1px solid",
+    background: "none"
   }
 };

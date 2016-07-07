@@ -25,7 +25,7 @@
       }
     },
     disabled: {
-      opacity: .8,
+      opacity: .4,
       cursor: "not-allowed"
     }
   }}

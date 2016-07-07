@@ -30,6 +30,28 @@ module.exports = {
   // --------
   mediaSizes: {
     medium: "only screen and (min-width: 44em)"
+  },
+  // ---------------------
+  // CodeMirror Theme
+  // ---------------------
+  codeMirror: {
+    bg: "#3C424D",
+    bgFocused: "#2F353F",
+    selected: "#4B515B",
+    gray: "#707880",
+    blue: "#61AFEF",
+    cyan: "#a0cad0",
+    softCyan: "#8ABEB7",
+    green: "#83d38f",
+    lime: "#98C379",
+    orange: "#dab288",
+    pink: "#da93b4",
+    purple: "#C678DD",
+    red: "#DA817C",
+    yellow: "#E5C076",
+    darkYellow: "#C68D60",
+    cement: "#ABB2BF",
+    lightCement: "#CFD6E1"
   }
 };
 /* eslint-enable max-len */

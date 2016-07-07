@@ -17,7 +17,7 @@ class Home extends React.Component {
       },
       contentBlock: {
         margin: `${theme.gutter}px auto`,
-        maxWidth: "620px"
+        maxWidth: "720px"
       },
       displayCopy: {
         color: theme.charcoal,
