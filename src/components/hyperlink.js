@@ -37,15 +37,11 @@ class Hyperlink extends React.Component {
 
   render() {
     const styles = this.getStyles();
+    const { destination, theme, style, ...cleanedProps } = this.props;
 
-    const resolvedStyles = [
-      styles.base,
-      this.props.theme && styles[this.props.theme],
-      this.props.style
-    ];
-    const { destination, theme, ...cleanedProps } = this.props;
+    const resolvedStyles = [styles.base, theme && styles[theme], style];
 
-    if (this.props.destination === "internal") {
+    if (destination === "internal") {
       return (
         <RadiumLink
           style={resolvedStyles}
