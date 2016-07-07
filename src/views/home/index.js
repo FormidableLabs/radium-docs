@@ -1,6 +1,6 @@
 import React from "react";
 import Radium from "radium";
-import Hero from "../../components/hero";
+import Hero from "./components/hero";
 
 import theme from "../../radium-theme";
 
