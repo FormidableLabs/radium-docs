@@ -8,7 +8,8 @@ class Sidebar extends React.Component {
   getStyles() {
     return {
       container: {
-        background: theme.charcoal
+        background: theme.lightCharcoal,
+        padding: `${theme.gutter}px`
       },
       logo: {
         flex: "0 1 160px",
