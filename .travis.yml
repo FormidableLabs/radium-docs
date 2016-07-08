@@ -13,7 +13,7 @@ addons:
 
 branches:
   only:
-    - task-setupTravis
+    - master
 
 before_install:
   # GUI for real browsers.
@@ -40,4 +40,4 @@ deploy:
   provider: script
   script: ./deploy.sh
   on:
-    branch: task-setupTravis
+    branch: master

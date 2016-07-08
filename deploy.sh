@@ -25,4 +25,4 @@ ssh -i deploy_static.pem formidable@192.241.218.94 "rm -rf static/radium-docs-st
 # copy the radium build to the staging arena; if this fails, site is still OK
 scp -i ./deploy_static.pem -rp ./build/* formidable@192.241.218.94:/home/formidable/static/radium-docs-staging
 # rename the staging arena to the actual radium site
-ssh -i ./deploy_static.pem formidable@192.241.218.94 "rm -rf static/radium-test && mv static/radium-docs-staging/ static/radium-test"
+ssh -i ./deploy_static.pem formidable@192.241.218.94 "rm -rf static/radium && mv static/radium-docs-staging/ static/radium"
