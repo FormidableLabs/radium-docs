@@ -3,6 +3,7 @@ import Radium from "radium";
 import Hero from "./components/hero";
 import Demo from "./components/demo";
 import RadiumLink from "../../components/hyperlink";
+import RadiumButton from "../../components/button";
 
 import theme from "../../radium-theme";
 
@@ -10,14 +11,11 @@ class Home extends React.Component {
 
   getStyles() {
     return {
-      section: {
-        paddingBottom: `${theme.gutter * 2}px`
-      },
       content: {
-        padding: `0px ${theme.gutter}px`
+        padding: `5px ${theme.gutter}px ${theme.gutter * 2}px`
       },
       contentBlock: {
-        margin: `${theme.gutter}px auto`,
+        margin: `${theme.gutter * 2}px auto`,
         maxWidth: "720px"
       },
       displayCopy: {
@@ -27,6 +25,10 @@ class Home extends React.Component {
       copy: {
         color: theme.darkCharcoal,
         fontFamily: theme.serif
+      },
+      documentationCTA: {
+        background: theme.lighterGray,
+        textAlign: "center"
       }
     };
   }
@@ -35,7 +37,7 @@ class Home extends React.Component {
     const styles = this.getStyles();
 
     return (
-      <section style={styles.section}>
+      <main role="main">
         <Hero />
         <section id="whyRadium" style={styles.content}>
           <section style={styles.contentBlock}>
@@ -63,22 +65,32 @@ class Home extends React.Component {
               <li>Dead code elimination</li>
               <li>Highly expressive</li>
             </ul>
-            <p>To learn more about CSS in JS and the inspirations behind this library, check out <RadiumLink href="https://speakerdeck.com/vjeux/react-css-in-js">React: CSS in JS</RadiumLink> by <RadiumLink href="https://twitter.com/Vjeux">vjeux</RadiumLink></p>
+            <p style={styles.copy}>To learn more about CSS in JS and the inspirations behind this library, check out <RadiumLink href="https://speakerdeck.com/vjeux/react-css-in-js">React: CSS in JS</RadiumLink> by <RadiumLink href="https://twitter.com/Vjeux">vjeux</RadiumLink></p>
           </section>
           <section style={styles.contentBlock}>
             <h3 style={styles.displayCopy}>Getting Started with Radium</h3>
-            <p>To install the stable version of Radium:</p>
+
+            <p style={styles.copy}>To install the stable version of Radium:</p>
+
             <p><code>npm install --save radium</code></p>
-            <p>This assumes you are using npm as your package manager. If you don’t, you can <RadiumLink href="https://npmcdn.com/radium/">access these files on npmcdn</RadiumLink> or point your package manager to them.</p>
-            <p>Next, wrap <code>Radium()</code> around your component, like <code>module.exports = Radium(Component)</code>, or <code>Component = Radium(Component)</code>, which works with classes, createClass, and stateless components (functions that take props and return a ReactElement).</p>
-            <p>Then, write a style object as you normally would with inline styles, and add in styles for interactive states and media queries. Pass the style object to your component via <code>{`style={...}`}</code> and let Radium do the rest!</p>
+
+            <p style={styles.copy}>This assumes you are using npm as your package manager. If you don’t, you can <RadiumLink href="https://npmcdn.com/radium/">access these files on npmcdn</RadiumLink> or point your package manager to them.</p>
+
+            <p style={styles.copy}>Next, wrap <code>Radium()</code> around your component, like <code>module.exports = Radium(Component)</code>, or <code>Component = Radium(Component)</code>, which works with classes, createClass, and stateless components (functions that take props and return a ReactElement).</p>
+
+            <p style={styles.copy}>Then, write a style object as you normally would with inline styles, and add in styles for interactive states and media queries. Pass the style object to your component via <code>{`style={...}`}</code> and let Radium do the rest!</p>
+
             <Demo src={require("!!raw!./demos/gettingStarted.md")} />
           </section>
         </section>
-        <section id="docs" style={styles.content}>
-          <p style={styles.copy}>Link to docs here..</p>
+        <section id="docs" style={[styles.content, styles.documentationCTA]}>
+          <h2 style={styles.displayCopy}>Documentation</h2>
+          <p style={styles.copy}>Find guides, explore examples, and reference our API documentation.</p>
+          <RadiumButton styleOverrides={{marginTop: "1.25rem"}} size="large">
+            View Radium Docs
+          </RadiumButton>
         </section>
-      </section>
+      </main>
     );
   }
 }

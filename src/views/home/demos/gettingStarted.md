@@ -16,12 +16,11 @@ class Alert extends React.Component {
         position: "relative",
         width: "100%",
         padding: "5px",
+        borderRadius: "3px",
         backgroundColor: status.notification,
         color: "white",
         textAlign: "center",
-        fontSize: "1rem",
         letterSpacing: ".04rem",
-        borderRadius: "3px",
         fontFamily: "'Helvetica Neue', sans-serif",
         success: {
           backgroundColor: status.success

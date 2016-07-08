@@ -31,17 +31,20 @@ class App extends React.Component {
         transition: "color 0.195s ease-in",
         textDecoration: "none",
         ":hover": {
-          color: theme.black,
+          color: theme.white,
           transition: "color 0.225s ease-out"
         }
       },
       footer: {
+        marginTop: "0px",
         fontFamily: theme.monospace,
         MozOsxFontSmoothing: "grayscale",
         WebkitFontSmoothing: "antialiased",
         fontSize: "16px",
         letterSpacing: "normal",
-        padding: "4em 1em"
+        padding: "4em 1em",
+        backgroundSize: "cover",
+        color: theme.white
       }
     };
   }
@@ -55,12 +58,10 @@ class App extends React.Component {
           linkStyles={styles.headerLink}
           styleOverrides={{padding: "1.5rem"}}
         />
-        <main role="main">
-          {this.props.children}
-        </main>
+        {this.props.children}
         <Footer
-          background={theme.lightGray}
-          logoColor="black"
+          background={"#050505 url(./static/bg-radium.png) no-repeat bottom center"}
+          logoColor="white"
           linkStyles={styles.footerLink}
           styleOverrides={styles.footer}
         >

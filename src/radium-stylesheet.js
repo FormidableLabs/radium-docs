@@ -142,8 +142,9 @@ export default {
     position: "relative",
     textAlign: "center",
     order: "0",
-    padding: "30px",
-    background: theme.lighterGray
+    padding: `${theme.gutter * 2}px ${theme.gutter}px`,
+    background: theme.lighterGray,
+    border: `1px solid ${theme.lightGray}`
   },
   ".Interactive .playgroundPreview:after": {
     content: "'PREVIEW'",
