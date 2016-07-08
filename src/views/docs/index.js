@@ -1,8 +1,13 @@
 import React from "react";
+import Sidebar from "./components/sidebar";
 
 class Docs extends React.Component {
   render() {
-    return <div>docs</div>;
+    return (
+      <main>
+        <Sidebar />
+      </main>
+    );
   }
 }
 
