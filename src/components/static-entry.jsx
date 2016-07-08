@@ -5,6 +5,10 @@ import { renderToString } from "react-dom/server";
 import App from "./app";
 import Index from "../../templates/index.hbs";
 
+const routing = {
+  base: process.env.NODE_ENV === "production" ? "/open-source/radium/" : "/"
+};
+
 // Client render (optional):
 // `static-site-generator-webpack-plugin` supports shimming browser globals
 // so instead of checking whether the document is undefined (always false),
@@ -22,7 +26,8 @@ export default (locals, next) => {
   const content = renderToString(<App />);
   const html = Index({
     content,
-    bundleJs: assets
+    bundleJs: assets,
+    baseHref: routing.base
   });
 
   next(null, html);
