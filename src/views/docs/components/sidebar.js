@@ -7,16 +7,20 @@ import RADLOGO from "../../../../static/logo.svg";
 class Sidebar extends React.Component {
   getStyles() {
     return {
+      container: {
+        background: theme.charcoal
+      },
       logo: {
-        fill: theme.black
+        flex: "0 1 160px",
+        margin: "0 auto"
       }
     };
   }
   render() {
     const styles = this.getStyles();
     return (
-      <aside>
-        <header>
+      <aside style={[styles.container, this.props.layoutStyles]}>
+        <header style={{display: "flex", flexWrap: "wrap"}}>
           <div style={styles.logo} dangerouslySetInnerHTML={{__html: RADLOGO}} />
           <h1>Radium</h1>
           <h3>Subheading here</h3>
@@ -40,5 +44,9 @@ class Sidebar extends React.Component {
     );
   }
 }
+
+Sidebar.propTypes = {
+  layoutStyles: React.PropTypes.object
+};
 
 export default Radium(Sidebar);
