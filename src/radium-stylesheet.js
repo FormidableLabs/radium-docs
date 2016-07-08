@@ -43,6 +43,15 @@ export default {
     fontSize: "1rem",
     lineHeight: 1.4
   },
+  "p > code": {
+    padding: "0px 5px",
+    paddingTop: "0.2em",
+    paddingBottom: "0.2em",
+    margin: "0px",
+    fontSize: "85%",
+    background: "rgba(0,0,0,0.05)",
+    borderRadius: "3px"
+  },
   li: {
     fontSize: "1rem",
     lineHeight: 1.8
@@ -126,14 +135,14 @@ export default {
     fontFamily: theme.monospace,
     letterSpacing: "0.09em",
     fontSize: "12px",
-    margin: `10px`,
+    margin: "10px",
     lineHeight: 1
   },
   ".Interactive .playgroundPreview": {
     position: "relative",
     textAlign: "center",
     order: "0",
-    padding: "10px",
+    padding: "30px",
     background: theme.lighterGray
   },
   ".Interactive .playgroundPreview:after": {
@@ -145,7 +154,7 @@ export default {
     fontFamily: theme.monospace,
     letterSpacing: "0.09em",
     fontSize: "12px",
-    margin: `10px`,
+    margin: "10px",
     lineHeight: 1
   },
   ".Interactive .playgroundError": {
@@ -200,7 +209,7 @@ export default {
     color: theme.codeMirror.cyan
   },
   ".cm-s-elegant span.cm-def": {
-    color: theme.codeMirror.cement
+    color: theme.codeMirror.yellow
   },
   ".cm-s-elegant span.cm-attribute": {
     color: theme.codeMirror.yellow

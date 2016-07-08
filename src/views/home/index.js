@@ -67,7 +67,12 @@ class Home extends React.Component {
           </section>
           <section style={styles.contentBlock}>
             <h3 style={styles.displayCopy}>Getting Started with Radium</h3>
-            <p style={styles.copy}>Using example..</p>
+            <p>To install the stable version of Radium:</p>
+            <p><code>npm install --save radium</code></p>
+            <p>This assumes you are using npm as your package manager. If you don’t, you can <RadiumLink href="https://npmcdn.com/radium/">access these files on npmcdn</RadiumLink> or point your package manager to them.</p>
+            <p>Next, wrap <code>Radium()</code> around your component, like <code>module.exports = Radium(Component)</code>, or <code>Component = Radium(Component)</code>, which works with classes, createClass, and stateless components (functions that take props and return a ReactElement).</p>
+            <p>Then, write a style object as you normally would with inline styles, and add in styles for interactive states and media queries. Pass the style object to your component via <code>{`style={...}`}</code> and let Radium do the rest!</p>
+            <Demo src={require("!!raw!./demos/gettingStarted.md")} />
           </section>
         </section>
         <section id="docs" style={styles.content}>
