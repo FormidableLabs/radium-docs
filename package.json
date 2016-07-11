@@ -5,6 +5,7 @@
   "main": "webpack.config.dev.js",
   "scripts": {
     "start": "builder run dev",
+    "dev": "webpack-dev-server --port 3000 --config node_modules/builder-docs-archetype/config/webpack/webpack.config.dev.js --history-api-fallback",
     "test": "builder run lint",
     "update-project": "rm -rf node_modules/radium && npm update radium"
   },
