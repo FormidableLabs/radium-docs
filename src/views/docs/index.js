@@ -2,8 +2,20 @@ import React from "react";
 import Radium from "radium";
 import Sidebar from "./components/sidebar";
 import Documentation from "./components/docs";
+import { find } from "lodash";
+import { documents } from "./components/radium-files";
 
 class Docs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { docsComponent: null };
+  }
+
+  componentWillMount() {
+    const docsObj = find(documents, {slug: this.props.params.component});
+    this.setState({docs: docsObj});
+  }
+
   getStyles() {
     return {
       main: {
@@ -26,11 +38,21 @@ class Docs extends React.Component {
     const styles = this.getStyles();
     return (
       <main style={styles.main}>
-        <Sidebar layoutStyles={styles.sidebar}/>
-        <Documentation layoutStyles={styles.documentation}/>
+        <Sidebar
+          layoutStyles={styles.sidebar}
+          currentRoute={this.props.params.component}
+        />
+        <Documentation
+          layoutStyles={styles.documentation}
+          docs={this.state.docs.docs}
+        />
       </main>
     );
   }
 }
+
+Docs.propTypes = {
+  params: React.PropTypes.object.isRequired
+};
 
 export default Radium(Docs);
