@@ -16,6 +16,11 @@ class Docs extends React.Component {
     this.setState({docs: docsObj});
   }
 
+  componentWillReceiveProps(props) {
+    const newDocsObj = find(documents, {slug: props.params.component});
+    this.setState({docs: newDocsObj});
+  }
+
   getStyles() {
     return {
       main: {
@@ -38,10 +43,7 @@ class Docs extends React.Component {
     const styles = this.getStyles();
     return (
       <main style={styles.main}>
-        <Sidebar
-          layoutStyles={styles.sidebar}
-          currentRoute={this.props.params.component}
-        />
+        <Sidebar layoutStyles={styles.sidebar} />
         <Documentation
           layoutStyles={styles.documentation}
           docs={this.state.docs.docs}

@@ -40,13 +40,28 @@ class Sidebar extends React.Component {
         </header>
         <ul role="menu">
           <li>
-            <RadLink href="#" destination="internal">
-              Menu Item
+            <RadLink href="/docs/getting-started" destination="internal">
+              Getting Started
             </RadLink>
           </li>
           <li>
-            <RadLink href="#" destination="internal">
-              Menu Item 2
+            <RadLink href="/docs/guide" destination="internal">
+              Using Radium
+            </RadLink>
+          </li>
+          <li>
+            <RadLink href="/docs/api" destination="internal">
+              API Docs
+            </RadLink>
+          </li>
+          <li>
+            <RadLink href="/docs/faq" destination="internal">
+              Radium FAQ
+            </RadLink>
+          </li>
+          <li>
+            <RadLink href="/docs/compare" destination="internal">
+              Framework Comparison
             </RadLink>
           </li>
         </ul>
