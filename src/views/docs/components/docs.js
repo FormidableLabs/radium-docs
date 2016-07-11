@@ -5,10 +5,15 @@ import theme from "../../../radium-theme";
 import Ecology from "ecology";
 
 class Docs extends React.Component {
+  componentDidUpdate() {
+    this.refs.docsContainer.scrollTop = 0;
+  }
+
   getStyles() {
     return {
       container: {
-        padding: `${theme.gutter}px`
+        padding: `${theme.gutter}px`,
+        overflowY: "scroll"
       }
     };
   }
@@ -16,7 +21,7 @@ class Docs extends React.Component {
   render() {
     const styles = this.getStyles();
     return (
-      <section style={[styles.container, this.props.layoutStyles]}>
+      <section ref="docsContainer" style={[styles.container, this.props.layoutStyles]}>
         <Ecology
           overview={this.props.docs}
           scope={{React, ReactDOM, Radium}}
