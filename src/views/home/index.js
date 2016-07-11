@@ -4,7 +4,7 @@ import Hero from "./components/hero";
 import Demo from "./components/demo";
 import RadiumLink from "../../components/hyperlink";
 import RadiumButton from "../../components/button";
-import { Footer } from "formidable-landers";
+import { Footer, Header } from "formidable-landers";
 
 import theme from "../../radium-theme";
 
@@ -50,6 +50,18 @@ class Home extends React.Component {
         padding: "4em 1em",
         backgroundSize: "cover",
         color: theme.white
+      },
+      headerLink: {
+        color: theme.lightGray,
+        fontFamily: theme.monospace,
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased",
+        transition: "color 0.195s ease-in",
+        textDecoration: "none",
+        ":hover": {
+          color: theme.white,
+          transition: "color 0.225s ease-out"
+        }
       }
     };
   }
@@ -59,6 +71,11 @@ class Home extends React.Component {
 
     return (
       <main role="main">
+        <Header
+          background={theme.charcoal}
+          linkStyles={styles.headerLink}
+          styleOverrides={{padding: "1.5rem"}}
+        />
         <Hero />
         <section id="whyRadium" style={styles.content}>
           <section style={styles.contentBlock}>
@@ -110,7 +127,7 @@ class Home extends React.Component {
           </RadiumButton>
         </section>
         <Footer
-          background={"#050505 url(./static/bg-radium.png) no-repeat bottom center"}
+          background={"#050505 url(./static/bg-radium.jpg) no-repeat bottom center"}
           logoColor="white"
           linkStyles={styles.footerLink}
           styleOverrides={styles.footer}

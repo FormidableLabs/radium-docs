@@ -39,11 +39,18 @@ export default {
     marginTop: "1.25rem",
     marginBottom: 0
   },
+  "h1, h2, h3, h4, h5, h6, hgroup": {
+    fontFamily: theme.sansSerif,
+    MozOsxFontSmoothing: "grayscale",
+    WebkitFontSmoothing: "antialiased"
+  },
   p: {
     fontSize: "1rem",
-    lineHeight: 1.4
+    lineHeight: 1.4,
+    MozOsxFontSmoothing: "grayscale",
+    WebkitFontSmoothing: "antialiased"
   },
-  "p > code": {
+  "p > code, li > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code": {
     padding: "0px 5px",
     paddingTop: "0.2em",
     paddingBottom: "0.2em",
@@ -98,6 +105,32 @@ export default {
         fontSize: "1.5rem"
       }
     }
+  },
+  ".DocumentContainer .Ecology": {
+    maxWidth: "800px",
+    margin: "0 auto",
+    padding: `${theme.gutter}px ${theme.gutter}px ${theme.gutter * 2}px`,
+    color: theme.charcoal
+  },
+  ".DocumentContainer .Ecology .Overview > div > h1": {
+    marginTop: 0
+  },
+  ".DocumentContainer .Ecology a": {
+    color: theme.red,
+    ":hover": {
+      color: theme.charcoal
+    }
+  },
+  ".DocumentContainer .Ecology pre": {
+    padding: "16px",
+    overflow: "auto",
+    fontSize: ".9em",
+    lineHeight: "1.45",
+    backgroundColor: "#f5f5f5",
+    borderRadius: "3px"
+  },
+  ".DocumentContainer .Ecology p": {
+    fontFamily: theme.serif
   },
   /*
    * Interactive/Component Playground

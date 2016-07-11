@@ -11,7 +11,7 @@ class Hero extends React.Component {
     return {
       header: {
         backgroundColor: "#050505",
-        backgroundImage: `url(./static/bg-radium.png)`,
+        backgroundImage: `url(./static/bg-radium.jpg)`,
         backgroundPosition: "bottom center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -44,14 +44,10 @@ class Hero extends React.Component {
         flex: "1 1 auto"
       },
       heading: {
-        fontFamily: theme.sansSerif,
-        MozOsxFontSmoothing: "grayscale",
-        WebkitFontSmoothing: "antialiased"
+        fontFamily: theme.sansSerif
       },
       paragraph: {
         fontFamily: theme.monospace,
-        MozOsxFontSmoothing: "grayscale",
-        WebkitFontSmoothing: "antialiased",
         fontSize: "0.875rem",
         lineHeight: "1.5",
         maxWidth: "30em"

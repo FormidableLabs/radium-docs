@@ -7,6 +7,7 @@ module.exports = {
   serif: "'tiempos', 'Source Serif Pro', Georgia, serif",
   monospace: "'akkurat', 'Courier New', 'Courier', monospace",
   code: "'Source Code Pro', Consolas, 'Inconsolata', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Courier New', 'Courier', monospace",
+  system: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
   // --------
   // Colors
   // --------

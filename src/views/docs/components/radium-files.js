@@ -1,7 +1,6 @@
 import RadiumAPI from "../../../../node_modules/radium/docs/api/README.md";
 import RadiumFAQ from "../../../../node_modules/radium/docs/faq/README.md";
 import RadiumGuide from "../../../../node_modules/radium/docs/guides/README.md";
-import RadiumComparison from "../../../../node_modules/radium/docs/comparison/README.md";
 import RadiumReadme from "../../../../node_modules/radium/README.md";
 
 export const documents = [
@@ -24,10 +23,5 @@ export const documents = [
     text: "RadiumGuide",
     slug: "guide",
     docs: RadiumGuide
-  },
-  {
-    text: "RadiumComparison",
-    slug: "compare",
-    docs: RadiumComparison
   }
 ];

@@ -2,20 +2,20 @@ import React from "react";
 import Radium from "radium";
 import RadLink from "../../../components/hyperlink";
 import theme from "../../../radium-theme";
-import RADLOGO from "../../../../static/logo.svg";
 
 class Sidebar extends React.Component {
   getStyles() {
     return {
       container: {
-        background: theme.lightCharcoal,
-        padding: `${theme.gutter / 2}px`
+        padding: `${theme.gutter / 2}px`,
+        background: `#050505 url(../static/bg-radium.jpg) no-repeat bottom center`
       },
-      logo: {
-        flex: "0 1 140px"
+      header: {
+        display: "flex",
+        flexWrap: "wrap"
       },
       heading: {
-        color: theme.white,
+        color: theme.lighterGray,
         fontFamily: theme.sansSerif,
         width: "100%",
         marginTop: "10px",
@@ -23,58 +23,97 @@ class Sidebar extends React.Component {
       },
       subHeading: {
         marginTop: "10px",
-        color: theme.white,
+        color: theme.lighterGray,
         fontFamily: theme.monospace,
         fontSize: ".8rem"
+      },
+      menu: {
+        padding: "0px",
+        listStyle: "none",
+        fontFamily: theme.monospace
+      },
+      menuLi: {
+        fontSize: "1rem"
+      },
+      footer: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+        flex: "1",
+        padding: "0",
+        fontSize: "14px",
+        fontFamily: theme.monospace
       }
     };
   }
+
+  getLinkStyles(slug) {
+    const linkColor = this.props.currentDocument === slug ?
+      theme.red
+      : theme.lighterGray;
+
+    return {
+      color: linkColor,
+      ":hover": {
+        color: theme.red
+      }
+    };
+  }
+
   render() {
     const styles = this.getStyles();
     return (
       <aside style={[styles.container, this.props.layoutStyles]}>
-        <header style={{display: "flex", flexWrap: "wrap"}}>
-          <div style={styles.logo} dangerouslySetInnerHTML={{__html: RADLOGO}} />
+        <header style={styles.header}>
           <h2 style={styles.heading}>Radium</h2>
           <span style={styles.subHeading}>Radium is a set of tools to manage inline styles on React elements. It gives you powerful styling capabilities without CSS.</span>
         </header>
-        <ul role="menu">
-          <li>
-            <RadLink href="/docs/getting-started" destination="internal">
+        <ul role="menu" style={styles.menu}>
+          <li style={styles.menuLi}>
+            <RadLink
+              href="/docs/getting-started"
+              destination="internal"
+              style={this.getLinkStyles("getting-started")}
+            >
               Getting Started
             </RadLink>
           </li>
-          <li>
-            <RadLink href="/docs/guide" destination="internal">
+          <li style={styles.menuLi}>
+            <RadLink
+              href="/docs/guide"
+              destination="internal"
+              style={this.getLinkStyles("guide")}
+            >
               Using Radium
             </RadLink>
           </li>
-          <li>
-            <RadLink href="/docs/api" destination="internal">
+          <li style={styles.menuLi}>
+            <RadLink
+              href="/docs/api"
+              destination="internal"
+              style={this.getLinkStyles("api")}
+            >
               API Docs
             </RadLink>
           </li>
-          <li>
-            <RadLink href="/docs/faq" destination="internal">
+          <li style={styles.menuLi}>
+            <RadLink
+              href="/docs/faq"
+              destination="internal"
+              style={this.getLinkStyles("faq")}
+            >
               Radium FAQ
             </RadLink>
           </li>
-          <li>
-            <RadLink href="/docs/compare" destination="internal">
-              Framework Comparison
-            </RadLink>
-          </li>
         </ul>
-        <footer style={{flex: "1"}}>
-          Footer stuff here
-        </footer>
       </aside>
     );
   }
 }
 
 Sidebar.propTypes = {
-  layoutStyles: React.PropTypes.object
+  layoutStyles: React.PropTypes.object,
+  currentDocument: React.PropTypes.string.isRequired
 };
 
 export default Radium(Sidebar);
