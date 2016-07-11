@@ -9,11 +9,23 @@ class Sidebar extends React.Component {
     return {
       container: {
         background: theme.lightCharcoal,
-        padding: `${theme.gutter}px`
+        padding: `${theme.gutter / 2}px`
       },
       logo: {
-        flex: "0 1 160px",
-        margin: "0 auto"
+        flex: "0 1 140px"
+      },
+      heading: {
+        color: theme.white,
+        fontFamily: theme.sansSerif,
+        width: "100%",
+        marginTop: "10px",
+        WebkitFontSmoothing: "antialiased"
+      },
+      subHeading: {
+        marginTop: "10px",
+        color: theme.white,
+        fontFamily: theme.monospace,
+        fontSize: ".8rem"
       }
     };
   }
@@ -23,8 +35,8 @@ class Sidebar extends React.Component {
       <aside style={[styles.container, this.props.layoutStyles]}>
         <header style={{display: "flex", flexWrap: "wrap"}}>
           <div style={styles.logo} dangerouslySetInnerHTML={{__html: RADLOGO}} />
-          <h1>Radium</h1>
-          <h3>Subheading here</h3>
+          <h2 style={styles.heading}>Radium</h2>
+          <span style={styles.subHeading}>Radium is a set of tools to manage inline styles on React elements. It gives you powerful styling capabilities without CSS.</span>
         </header>
         <ul role="menu">
           <li>
@@ -38,7 +50,7 @@ class Sidebar extends React.Component {
             </RadLink>
           </li>
         </ul>
-        <footer>
+        <footer style={{flex: "1"}}>
           Footer stuff here
         </footer>
       </aside>

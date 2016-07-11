@@ -14,7 +14,7 @@ class Docs extends React.Component {
       sidebar: {
         height: "100%",
         display: "flex",
-        flex: "0 0 280px",
+        flex: "0 0 240px",
         flexDirection: "column"
       },
       documentation: {
