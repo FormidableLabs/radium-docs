@@ -4,7 +4,6 @@ import ga from "react-ga";
 
 // base stylesheet
 import stylesheet from "../radium-stylesheet";
-import theme from "../radium-theme";
 
 class App extends React.Component {
   componentDidMount() {
