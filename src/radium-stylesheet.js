@@ -17,7 +17,10 @@ const codeStyles = {
   whiteSpace: "pre",
   wordSpacing: "normal",
   wordBreak: "normal",
-  tabSize: 4,
+  tabSize: 2,
+  webkitHyphens: "none",
+  mozHyphens: "none",
+  mHyphens: "none",
   hyphens: "none",
   background: "transparent"
 };
