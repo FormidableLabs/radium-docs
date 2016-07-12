@@ -1,8 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Radium from "radium";
 import theme from "../../../radium-theme";
-import Ecology from "ecology";
+import RadiumLink from "../../../components/hyperlink";
+import marked from "marked";
 import RADLOGO from "../../../../static/logo-dark.svg";
 import Prism from "prismjs";
 /* eslint-disable no-unused-vars */
@@ -37,6 +37,7 @@ class Docs extends React.Component {
         flex: `1 0 ${headerHeight}`,
         padding: `${theme.gutter / 2}px`,
         borderBottom: `1px solid ${theme.lighterGray}`,
+        background: "#fefefe",
         button: {
           border: "none",
           background: "transparent",
@@ -44,17 +45,24 @@ class Docs extends React.Component {
           fontSize: "14px",
           color: theme.lightgray,
           transition: "color 250ms ease, border-color 250ms ease",
+          cursor: "pointer",
+          userSelect: "none",
+          outline: "none",
           ":hover": {
-            color: theme.charcoal
+            color: theme.red
           },
           ":focus": {
-            color: theme.charcoal
+            color: theme.red
           }
         },
         logo: {
           display: "block",
           height: "30px",
-          width: "30px"
+          width: "30px",
+          cursor: "pointer",
+          ":hover": {
+            background: theme.lighterGray
+          }
         }
       },
       container: {
@@ -89,18 +97,19 @@ class Docs extends React.Component {
       <section style={[styles.container, this.props.layoutStyles]}>
         <header style={styles.header}>
           <button style={styles.header.button} onClick={this.props.handleMenuToggle}>Menu</button>
-          <div style={styles.header.logo} dangerouslySetInnerHTML={{__html: RADLOGO}} />
+          <RadiumLink href="/" destination="internal">
+            <div
+              style={styles.header.logo}
+              dangerouslySetInnerHTML={{__html: RADLOGO}}
+            />
+          </RadiumLink>
         </header>
         <section
           style={styles.documentContainer}
           ref="docContainer"
           className="DocumentContainer"
         >
-          <Ecology
-            overview={this.props.docs}
-            scope={{React, ReactDOM, Radium}}
-            playgroundtheme="elegant"
-          />
+          <div className="Documentation" dangerouslySetInnerHTML={{__html: marked(this.props.docs)}} />
           <Footer
             background={theme.lighterGray}
             logoColor="black"

@@ -33,7 +33,7 @@
     "history": "~1.17.0",
     "marked": "^0.3.5",
     "prismjs": "^1.5.1",
-    "radium": "^0.17.1",
+    "radium": "formidableLabs/radium",
     "radium-grid": "^2.0.1",
     "react": "15.2.0",
     "react-dom": "15.2.0",
