@@ -49,7 +49,6 @@ class Home extends React.Component {
         fontSize: "16px",
         letterSpacing: "normal",
         padding: "4em 1em",
-        backgroundSize: "cover",
         color: theme.white
       },
       headerLink: {
