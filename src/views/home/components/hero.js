@@ -134,17 +134,17 @@ class Hero extends React.Component {
               </RadLink>
             </li>
             <li style={styles.navListItem}>
-              <RadLink destination="internal" href="docs" theme="onDark">
+              <RadLink destination="internal" href="docs/guide" theme="onDark">
                 Using Radium
               </RadLink>
             </li>
             <li style={styles.navListItem}>
-              <RadLink destination="internal" href="docs" theme="onDark">
+              <RadLink destination="internal" href="docs/api" theme="onDark">
                 API Docs
               </RadLink>
             </li>
             <li style={styles.navListItem}>
-              <RadLink destination="internal" href="docs" theme="onDark">
+              <RadLink destination="internal" href="docs/faq" theme="onDark">
                 F.A.Q.
               </RadLink>
             </li>

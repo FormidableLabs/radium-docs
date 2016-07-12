@@ -33,7 +33,8 @@ class Sidebar extends React.Component {
         fontFamily: theme.monospace
       },
       menuLi: {
-        fontSize: "1.2rem"
+        fontSize: "1rem",
+        WebkitFontSmoothing: "antialiased"
       },
       footer: {
         display: "flex",
@@ -49,13 +50,13 @@ class Sidebar extends React.Component {
 
   getLinkStyles(slug) {
     const linkColor = this.props.currentDocument === slug ?
-      theme.red
-      : theme.lighterGray;
+      theme.white
+      : theme.lightGray;
 
     return {
       color: linkColor,
       ":hover": {
-        color: theme.red
+        color: theme.white
       }
     };
   }
@@ -69,6 +70,15 @@ class Sidebar extends React.Component {
           <span style={styles.subHeading}>Radium is a set of tools to manage inline styles on React elements. It gives you powerful styling capabilities without CSS.</span>
         </header>
         <ul role="menu" style={styles.menu}>
+        <li style={styles.menuLi}>
+          <RadLink
+            href="/"
+            destination="internal"
+            style={this.getLinkStyles("/")}
+          >
+            Radium Home
+          </RadLink>
+        </li>
           <li style={styles.menuLi}>
             <RadLink
               href="/docs/getting-started"
