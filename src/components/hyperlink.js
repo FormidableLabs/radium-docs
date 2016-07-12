@@ -19,11 +19,11 @@ class Hyperlink extends React.Component {
         color: settings.red,
         cursor: "pointer",
         display: "inline",
-        transition: "color 0.195s ease-in",
+        transition: "color 195ms ease-in",
         textDecoration: "none",
         ":hover": {
-          color: settings.black,
-          transition: "color 0.225s ease-out"
+          color: settings.charcoal,
+          transition: "color 225ms ease-out"
         }
       },
       onDark: {

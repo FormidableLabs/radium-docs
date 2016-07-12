@@ -6,9 +6,9 @@
 class Alert extends React.Component {
   getStyles() {
     const status = {
-      notification: "rgb(41, 128, 185)",
-      success: "rgb(39, 174, 96)",
-      error: "rgb(231, 76, 60)"
+      notification: "#0074D9",
+      success: "#27AE60",
+      error: "#E74C3C"
     }
 
     return {
@@ -20,7 +20,6 @@ class Alert extends React.Component {
         backgroundColor: status.notification,
         color: "white",
         textAlign: "center",
-        letterSpacing: ".04rem",
         fontFamily: "'Helvetica Neue', sans-serif",
         success: {
           backgroundColor: status.success

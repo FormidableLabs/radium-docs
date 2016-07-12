@@ -8,6 +8,23 @@ import theme from "./radium-theme";
 // MozOsxFontSmoothing: "grayscale",
 // WebkitFontSmoothing: "antialiased"
 
+const codeStyles = {
+  fontFamily: theme.code,
+  fontSize: ".9em",
+  lineHeight: 1.375,
+  direction: "ltr",
+  textAlign: "left",
+  whiteSpace: "pre",
+  wordSpacing: "normal",
+  wordBreak: "normal",
+  tabSize: 2,
+  webkitHyphens: "none",
+  mozHyphens: "none",
+  msHyphens: "none",
+  hyphens: "none",
+  background: "transparent"
+};
+
 // Stylesheet
 export default {
   "*, *:before, *:after": {
@@ -39,11 +56,17 @@ export default {
     marginTop: "1.25rem",
     marginBottom: 0
   },
+  "ul ul": {
+    marginTop: "0"
+  },
+  "h1, h2, h3, h4, h5, h6, hgroup": {
+    fontFamily: theme.sansSerif
+  },
   p: {
     fontSize: "1rem",
     lineHeight: 1.4
   },
-  "p > code": {
+  "p > code, li > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code": {
     padding: "0px 5px",
     paddingTop: "0.2em",
     paddingBottom: "0.2em",
@@ -100,6 +123,52 @@ export default {
     }
   },
   /*
+   * Markdown Styling
+   * Viewable at /docs
+  */
+  ".Documentation": {
+    maxWidth: "800px",
+    margin: "0 auto",
+    padding: `${theme.gutter}px ${theme.gutter}px ${theme.gutter * 2}px`,
+    color: theme.charcoal
+  },
+  ".Documentation > h1": {
+    marginTop: 0
+  },
+  ".Documentation pre": {
+    padding: "16px",
+    overflow: "auto",
+    fontSize: ".9em",
+    lineHeight: "1.45",
+    backgroundColor: "#f5f5f5",
+    borderRadius: "3px"
+  },
+  ".Documentation p": {
+    fontFamily: theme.serif,
+    MozOsxFontSmoothing: "grayscale",
+    WebkitFontSmoothing: "antialiased"
+  },
+  ".Documentation a": {
+    color: theme.red,
+    cursor: "pointer",
+    display: "inline",
+    transition: "color 195ms ease-in",
+    textDecoration: "none",
+    ":hover": {
+      color: theme.charcoal,
+      transition: "color 225ms ease-out"
+    }
+  },
+  ".Documentation li": {
+    MozOsxFontSmoothing: "grayscale",
+    WebkitFontSmoothing: "antialiased"
+  },
+  ".Documentation h1, .Documentation h2, .Documentation h3, .Documentation h4, .Documentation h5": {
+    MozOsxFontSmoothing: "grayscale",
+    WebkitFontSmoothing: "antialiased"
+  },
+  ".Documentation code[class*='language-'], .Documentation pre[class*='language-']": codeStyles,
+  /*
    * Interactive/Component Playground
    * .Interactive
    * |- .playground
@@ -118,7 +187,8 @@ export default {
   ".Interactive .playgroundCode": {
     order: "1",
     padding: 0,
-    margin: 0
+    margin: 0,
+    WebkitFontSmoothing: "subpixel-antialiased"
   },
   ".playgroundCode .playgroundStage": {
     position: "relative",
@@ -127,7 +197,7 @@ export default {
     margin: 0
   },
   ".Interactive .playgroundStage:after": {
-    content: "'EDITOR'",
+    content: "EDITOR",
     position: "absolute",
     right: 0,
     top: 0,
@@ -147,7 +217,7 @@ export default {
     border: `1px solid ${theme.lightGray}`
   },
   ".Interactive .playgroundPreview:after": {
-    content: "'PREVIEW'",
+    content: "PREVIEW",
     position: "absolute",
     right: 0,
     top: 0,
@@ -171,11 +241,7 @@ export default {
     whiteSpace: "pre",
     width: "100%"
   },
-  ".Interactive pre, .CodeMirror-code": {
-    fontFamily: theme.monospace,
-    fontSize: "14px",
-    lineHeight: 1.2
-  },
+  ".Interactive pre, .CodeMirror-code": codeStyles,
   ".CodeMirror": {
     background: "none !important"
   },

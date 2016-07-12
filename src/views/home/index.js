@@ -4,6 +4,7 @@ import Hero from "./components/hero";
 import Demo from "./components/demo";
 import RadiumLink from "../../components/hyperlink";
 import RadiumButton from "../../components/button";
+import { Footer, Header } from "formidable-landers";
 
 import theme from "../../radium-theme";
 
@@ -16,7 +17,8 @@ class Home extends React.Component {
       },
       contentBlock: {
         margin: `${theme.gutter * 2}px auto`,
-        maxWidth: "720px"
+        maxWidth: "720px",
+        WebkitFontSmoothing: "antialiased"
       },
       displayCopy: {
         color: theme.charcoal,
@@ -29,6 +31,37 @@ class Home extends React.Component {
       documentationCTA: {
         background: theme.lighterGray,
         textAlign: "center"
+      },
+      footerLink: {
+        color: theme.red,
+        transition: "color 195ms ease-in",
+        textDecoration: "none",
+        ":hover": {
+          color: theme.white,
+          transition: "color 225ms ease-out"
+        }
+      },
+      footer: {
+        margin: "0px",
+        fontFamily: theme.monospace,
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased",
+        fontSize: "16px",
+        letterSpacing: "normal",
+        padding: "4em 1em",
+        color: theme.white
+      },
+      headerLink: {
+        color: theme.lightGray,
+        fontFamily: theme.monospace,
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased",
+        transition: "color 195ms ease-in",
+        textDecoration: "none",
+        ":hover": {
+          color: theme.white,
+          transition: "color 225ms ease-out"
+        }
       }
     };
   }
@@ -38,6 +71,11 @@ class Home extends React.Component {
 
     return (
       <main role="main">
+        <Header
+          background={theme.charcoal}
+          linkStyles={styles.headerLink}
+          styleOverrides={{padding: "1.5rem"}}
+        />
         <Hero />
         <section id="whyRadium" style={styles.content}>
           <section style={styles.contentBlock}>
@@ -69,17 +107,13 @@ class Home extends React.Component {
           </section>
           <section style={styles.contentBlock}>
             <h3 style={styles.displayCopy}>Getting Started with Radium</h3>
-
             <p style={styles.copy}>To install the stable version of Radium:</p>
-
             <p><code>npm install --save radium</code></p>
-
             <p style={styles.copy}>This assumes you are using npm as your package manager. If you don’t, you can <RadiumLink href="https://npmcdn.com/radium/">access these files on npmcdn</RadiumLink> or point your package manager to them.</p>
 
             <p style={styles.copy}>Next, wrap <code>Radium()</code> around your component, like <code>module.exports = Radium(Component)</code>, or <code>Component = Radium(Component)</code>, which works with classes, createClass, and stateless components (functions that take props and return a ReactElement).</p>
 
             <p style={styles.copy}>Then, write a style object as you normally would with inline styles, and add in styles for interactive states and media queries. Pass the style object to your component via <code>{`style={...}`}</code> and let Radium do the rest!</p>
-
             <Demo src={require("!!raw!./demos/gettingStarted.md")} />
           </section>
         </section>
@@ -87,9 +121,19 @@ class Home extends React.Component {
           <h2 style={styles.displayCopy}>Documentation</h2>
           <p style={styles.copy}>Find guides, explore examples, and reference our API documentation.</p>
           <RadiumButton styleOverrides={{marginTop: "1.25rem"}} size="large">
-            View Radium Docs
+            <RadiumLink destination="internal" href="docs" theme="onDark">
+              View Radium Docs
+            </RadiumLink>
           </RadiumButton>
         </section>
+        <Footer
+          background={"#050505 url(./static/bg-radium.jpg) no-repeat bottom center"}
+          logoColor="white"
+          linkStyles={styles.footerLink}
+          styleOverrides={styles.footer}
+        >
+          <p style={{marginTop: "2.5em", fontSize: "14px"}}>Radium is a trademark of Formidable Labs, Inc.</p>
+        </Footer>
       </main>
     );
   }

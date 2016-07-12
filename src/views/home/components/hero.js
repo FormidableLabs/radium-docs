@@ -11,7 +11,7 @@ class Hero extends React.Component {
     return {
       header: {
         backgroundColor: "#050505",
-        backgroundImage: `url(./static/bg-radium.png)`,
+        backgroundImage: `url(./static/bg-radium.jpg)`,
         backgroundPosition: "bottom center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -50,11 +50,11 @@ class Hero extends React.Component {
       },
       paragraph: {
         fontFamily: theme.monospace,
-        MozOsxFontSmoothing: "grayscale",
-        WebkitFontSmoothing: "antialiased",
         fontSize: "0.875rem",
         lineHeight: "1.5",
-        maxWidth: "30em"
+        maxWidth: "30em",
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased"
       },
       installer: {
         backgroundColor: theme.charcoal,
@@ -134,17 +134,17 @@ class Hero extends React.Component {
               </RadLink>
             </li>
             <li style={styles.navListItem}>
-              <RadLink destination="internal" href="#" theme="onDark">
+              <RadLink destination="internal" href="docs/guide" theme="onDark">
                 Using Radium
               </RadLink>
             </li>
             <li style={styles.navListItem}>
-              <RadLink destination="internal" href="#" theme="onDark">
+              <RadLink destination="internal" href="docs/api" theme="onDark">
                 API Docs
               </RadLink>
             </li>
             <li style={styles.navListItem}>
-              <RadLink destination="internal" href="#" theme="onDark">
+              <RadLink destination="internal" href="docs/faq" theme="onDark">
                 F.A.Q.
               </RadLink>
             </li>
