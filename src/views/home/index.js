@@ -17,7 +17,8 @@ class Home extends React.Component {
       },
       contentBlock: {
         margin: `${theme.gutter * 2}px auto`,
-        maxWidth: "720px"
+        maxWidth: "720px",
+        WebkitFontSmoothing: "antialiased"
       },
       displayCopy: {
         color: theme.charcoal,
@@ -33,15 +34,15 @@ class Home extends React.Component {
       },
       footerLink: {
         color: theme.red,
-        transition: "color 0.195s ease-in",
+        transition: "color 195ms ease-in",
         textDecoration: "none",
         ":hover": {
           color: theme.white,
-          transition: "color 0.225s ease-out"
+          transition: "color 225ms ease-out"
         }
       },
       footer: {
-        marginTop: "0px",
+        margin: "0px",
         fontFamily: theme.monospace,
         MozOsxFontSmoothing: "grayscale",
         WebkitFontSmoothing: "antialiased",
@@ -56,11 +57,11 @@ class Home extends React.Component {
         fontFamily: theme.monospace,
         MozOsxFontSmoothing: "grayscale",
         WebkitFontSmoothing: "antialiased",
-        transition: "color 0.195s ease-in",
+        transition: "color 195ms ease-in",
         textDecoration: "none",
         ":hover": {
           color: theme.white,
-          transition: "color 0.225s ease-out"
+          transition: "color 225ms ease-out"
         }
       }
     };

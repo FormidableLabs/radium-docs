@@ -8,6 +8,20 @@ import theme from "./radium-theme";
 // MozOsxFontSmoothing: "grayscale",
 // WebkitFontSmoothing: "antialiased"
 
+const codeStyles = {
+  fontFamily: theme.code,
+  fontSize: ".9em",
+  lineHeight: 1.375,
+  direction: "ltr",
+  textAlign: "left",
+  whiteSpace: "pre",
+  wordSpacing: "normal",
+  wordBreak: "normal",
+  tabSize: 4,
+  hyphens: "none",
+  background: "transparent"
+};
+
 // Stylesheet
 export default {
   "*, *:before, *:after": {
@@ -118,12 +132,6 @@ export default {
   ".Documentation > h1": {
     marginTop: 0
   },
-  ".Documentation a": {
-    color: theme.red,
-    ":hover": {
-      color: theme.charcoal
-    }
-  },
   ".Documentation pre": {
     padding: "16px",
     overflow: "auto",
@@ -137,6 +145,17 @@ export default {
     MozOsxFontSmoothing: "grayscale",
     WebkitFontSmoothing: "antialiased"
   },
+  ".Documentation a": {
+    color: theme.red,
+    cursor: "pointer",
+    display: "inline",
+    transition: "color 195ms ease-in",
+    textDecoration: "none",
+    ":hover": {
+      color: theme.charcoal,
+      transition: "color 225ms ease-out"
+    }
+  },
   ".Documentation li": {
     MozOsxFontSmoothing: "grayscale",
     WebkitFontSmoothing: "antialiased"
@@ -145,6 +164,7 @@ export default {
     MozOsxFontSmoothing: "grayscale",
     WebkitFontSmoothing: "antialiased"
   },
+  ".Documentation code[class*='language-'], .Documentation pre[class*='language-']": codeStyles,
   /*
    * Interactive/Component Playground
    * .Interactive
@@ -164,7 +184,8 @@ export default {
   ".Interactive .playgroundCode": {
     order: "1",
     padding: 0,
-    margin: 0
+    margin: 0,
+    WebkitFontSmoothing: "subpixel-antialiased"
   },
   ".playgroundCode .playgroundStage": {
     position: "relative",
@@ -217,11 +238,7 @@ export default {
     whiteSpace: "pre",
     width: "100%"
   },
-  ".Interactive pre, .CodeMirror-code": {
-    fontFamily: theme.monospace,
-    fontSize: "14px",
-    lineHeight: 1.2
-  },
+  ".Interactive pre, .CodeMirror-code": codeStyles,
   ".CodeMirror": {
     background: "none !important"
   },

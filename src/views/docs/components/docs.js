@@ -44,12 +44,13 @@ class Docs extends React.Component {
           fontFamily: theme.monospace,
           fontSize: "14px",
           color: theme.lightgray,
-          transition: "color 250ms ease, border-color 250ms ease",
+          transition: "color 225ms ease-out , border-color 225ms ease-out",
           cursor: "pointer",
           userSelect: "none",
           outline: "none",
           ":hover": {
-            color: theme.red
+            color: theme.red,
+            transition: "color 195ms ease-in , border-color 195ms ease-in"
           },
           ":focus": {
             color: theme.red
@@ -81,11 +82,11 @@ class Docs extends React.Component {
         color: theme.red,
         cursor: "pointer",
         display: "inline",
-        transition: "color 0.195s ease-in",
+        transition: "color 195ms ease-in",
         textDecoration: "none",
         ":hover": {
           color: theme.black,
-          transition: "color 0.225s ease-out"
+          transition: "color 225ms ease-out"
         }
       }
     };
