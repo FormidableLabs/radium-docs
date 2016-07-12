@@ -115,7 +115,7 @@ export default {
     padding: `${theme.gutter}px ${theme.gutter}px ${theme.gutter * 2}px`,
     color: theme.charcoal
   },
-  ".Documentation > div > h1": {
+  ".Documentation > h1": {
     marginTop: 0
   },
   ".Documentation a": {
