@@ -20,7 +20,7 @@ const codeStyles = {
   tabSize: 2,
   webkitHyphens: "none",
   mozHyphens: "none",
-  mHyphens: "none",
+  msHyphens: "none",
   hyphens: "none",
   background: "transparent"
 };
