@@ -39,16 +39,15 @@ export default {
     marginTop: "1.25rem",
     marginBottom: 0
   },
+  "ul ul": {
+    marginTop: "0"
+  },
   "h1, h2, h3, h4, h5, h6, hgroup": {
-    fontFamily: theme.sansSerif,
-    MozOsxFontSmoothing: "grayscale",
-    WebkitFontSmoothing: "antialiased"
+    fontFamily: theme.sansSerif
   },
   p: {
     fontSize: "1rem",
-    lineHeight: 1.4,
-    MozOsxFontSmoothing: "grayscale",
-    WebkitFontSmoothing: "antialiased"
+    lineHeight: 1.4
   },
   "p > code, li > code, h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code": {
     padding: "0px 5px",
@@ -106,22 +105,26 @@ export default {
       }
     }
   },
-  ".DocumentContainer .Ecology": {
+  /*
+   * Markdown Styling
+   * Viewable at /docs
+  */
+  ".Documentation": {
     maxWidth: "800px",
     margin: "0 auto",
     padding: `${theme.gutter}px ${theme.gutter}px ${theme.gutter * 2}px`,
     color: theme.charcoal
   },
-  ".DocumentContainer .Ecology .Overview > div > h1": {
+  ".Documentation > div > h1": {
     marginTop: 0
   },
-  ".DocumentContainer .Ecology a": {
+  ".Documentation a": {
     color: theme.red,
     ":hover": {
       color: theme.charcoal
     }
   },
-  ".DocumentContainer .Ecology pre": {
+  ".Documentation pre": {
     padding: "16px",
     overflow: "auto",
     fontSize: ".9em",
@@ -129,8 +132,18 @@ export default {
     backgroundColor: "#f5f5f5",
     borderRadius: "3px"
   },
-  ".DocumentContainer .Ecology p": {
-    fontFamily: theme.serif
+  ".Documentation p": {
+    fontFamily: theme.serif,
+    MozOsxFontSmoothing: "grayscale",
+    WebkitFontSmoothing: "antialiased"
+  },
+  ".Documentation li": {
+    MozOsxFontSmoothing: "grayscale",
+    WebkitFontSmoothing: "antialiased"
+  },
+  ".Documentation h1, .Documentation h2, .Documentation h3, .Documentation h4, .Documentation h5": {
+    MozOsxFontSmoothing: "grayscale",
+    WebkitFontSmoothing: "antialiased"
   },
   /*
    * Interactive/Component Playground
@@ -160,7 +173,7 @@ export default {
     margin: 0
   },
   ".Interactive .playgroundStage:after": {
-    content: "'EDITOR'",
+    content: "EDITOR",
     position: "absolute",
     right: 0,
     top: 0,
@@ -180,7 +193,7 @@ export default {
     border: `1px solid ${theme.lightGray}`
   },
   ".Interactive .playgroundPreview:after": {
-    content: "'PREVIEW'",
+    content: "PREVIEW",
     position: "absolute",
     right: 0,
     top: 0,

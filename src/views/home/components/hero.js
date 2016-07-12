@@ -44,13 +44,17 @@ class Hero extends React.Component {
         flex: "1 1 auto"
       },
       heading: {
-        fontFamily: theme.sansSerif
+        fontFamily: theme.sansSerif,
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased"
       },
       paragraph: {
         fontFamily: theme.monospace,
         fontSize: "0.875rem",
         lineHeight: "1.5",
-        maxWidth: "30em"
+        maxWidth: "30em",
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased"
       },
       installer: {
         backgroundColor: theme.charcoal,

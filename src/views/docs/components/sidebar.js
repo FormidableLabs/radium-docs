@@ -33,7 +33,7 @@ class Sidebar extends React.Component {
         fontFamily: theme.monospace
       },
       menuLi: {
-        fontSize: "1rem"
+        fontSize: "1.2rem"
       },
       footer: {
         display: "flex",
