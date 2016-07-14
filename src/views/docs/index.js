@@ -15,11 +15,19 @@ class Docs extends React.Component {
   }
 
   componentWillMount() {
-    this.setState({docs: find(documents, {slug: this.props.params.document})});
+    this.setState({
+      docsComponent: find(documents, {
+        slug: this.props.params.document || "getting-started"
+      })
+    });
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({docs: find(documents, {slug: newProps.params.document})});
+    this.setState({
+      docsComponent: find(documents, {
+        slug: newProps.params.document
+      })
+    });
   }
 
   toggleMenu() {
@@ -63,11 +71,11 @@ class Docs extends React.Component {
       <main style={styles.main}>
         <Sidebar
           layoutStyles={styles.sidebar}
-          currentDocument={this.props.params.document}
+          currentDocument={this.props.params.document || "getting-started"}
         />
         <Documentation
           layoutStyles={styles.documentation}
-          docs={this.state.docs.docs}
+          docs={this.state.docsComponent.docs}
           handleMenuToggle={this.toggleMenu.bind(this)}
         />
       </main>

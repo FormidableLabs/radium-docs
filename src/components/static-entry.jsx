@@ -27,11 +27,11 @@ if (typeof window !== "undefined" && window.__STATIC_GENERATOR !== true) { //esl
   );
 }
 
+/* eslint-disable no-console*/
 // Exported static site renderer:
 export default (locals, callback) => {
   const history = createMemoryHistory();
   const location = history.createLocation(locals.path);
-
   match({ routes, location }, (error, redirectLocation, renderProps) => {
     callback(null, Index({
       content: renderToString(<RouterContext {...renderProps} />),
