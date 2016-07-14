@@ -30,6 +30,7 @@ if (typeof window !== "undefined" && window.__STATIC_GENERATOR !== true) { //esl
 /* eslint-disable no-console*/
 // Exported static site renderer:
 export default (locals, callback) => {
+  console.log(locals);
   const history = createMemoryHistory();
   const location = history.createLocation(locals.path);
   match({ routes, location }, (error, redirectLocation, renderProps) => {
