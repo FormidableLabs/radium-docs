@@ -1,17 +1,17 @@
 import React from "react";
 import Radium from "radium";
 
-import RadLink from "./hyperlink";
-import settings from "../radium-settings";
-import RADLOGO from "../../static/logo.svg";
-import GITHUBLOGO from "../../static/logo-github.svg";
+import RadLink from "../../../components/hyperlink";
+import theme from "../../../radium-theme";
+import RADLOGO from "../../../../static/logo.svg";
+import GITHUBLOGO from "../../../../static/logo-github.svg";
 
 class Hero extends React.Component {
   getHeroStyles() {
     return {
       header: {
         backgroundColor: "#050505",
-        backgroundImage: `url(./static/bg-radium.png)`,
+        backgroundImage: `url(./static/bg-radium.jpg)`,
         backgroundPosition: "bottom center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -19,9 +19,9 @@ class Hero extends React.Component {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-around",
-        minHeight: "900px",
+        minHeight: "650px",
         padding: "10% 1rem 2rem",
-        height: "90vh"
+        height: "80vh"
       },
       intro: {
         display: "flex",
@@ -30,31 +30,34 @@ class Hero extends React.Component {
         justifyContent: "space-between",
         margin: "auto",
         padding: 0,
-        width: "auto"
+        width: "auto",
+        [`@media ${theme.mediaSizes.medium}`]: {
+          flexWrap: "nowrap"
+        }
       },
       logo: {
         flex: "0 1 360px",
         marginRight: "3.75rem"
       },
       copy: {
-        color: settings.white,
+        color: theme.white,
         flex: "1 1 auto"
       },
       heading: {
-        fontFamily: settings.sansSerif,
+        fontFamily: theme.sansSerif,
         MozOsxFontSmoothing: "grayscale",
         WebkitFontSmoothing: "antialiased"
       },
       paragraph: {
-        fontFamily: settings.monospace,
-        MozOsxFontSmoothing: "grayscale",
-        WebkitFontSmoothing: "antialiased",
+        fontFamily: theme.monospace,
         fontSize: "0.875rem",
         lineHeight: "1.5",
-        maxWidth: "30em"
+        maxWidth: "30em",
+        MozOsxFontSmoothing: "grayscale",
+        WebkitFontSmoothing: "antialiased"
       },
       installer: {
-        backgroundColor: settings.charcoal,
+        backgroundColor: theme.charcoal,
         marginTop: "2rem",
         marginBottom: "5rem",
         maxWidth: "30em",
@@ -62,8 +65,8 @@ class Hero extends React.Component {
         textAlign: "center"
       },
       installerHeading: {
-        color: settings.white,
-        fontFamily: settings.monospace,
+        color: theme.white,
+        fontFamily: theme.monospace,
         MozOsxFontSmoothing: "grayscale",
         WebkitFontSmoothing: "antialiased",
         fontWeight: "normal",
@@ -77,11 +80,11 @@ class Hero extends React.Component {
         width: "100%"
       },
       navList: {
-        color: settings.white,
+        color: theme.white,
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
-        fontFamily: settings.monospace,
+        fontFamily: theme.monospace,
         MozOsxFontSmoothing: "grayscale",
         WebkitFontSmoothing: "antialiased",
         fontSize: "0.875rem",
@@ -94,7 +97,8 @@ class Hero extends React.Component {
         width: "100%"
       },
       navListItem: {
-        padding: "1.5em"
+        padding: "1.5em",
+        fontSize: "14px"
       },
       logoGithub: {
         color: "inherit",
@@ -130,17 +134,17 @@ class Hero extends React.Component {
               </RadLink>
             </li>
             <li style={styles.navListItem}>
-              <RadLink destination="internal" href="#" theme="onDark">
+              <RadLink destination="internal" href="docs/guide" theme="onDark">
                 Using Radium
               </RadLink>
             </li>
             <li style={styles.navListItem}>
-              <RadLink destination="internal" href="#" theme="onDark">
+              <RadLink destination="internal" href="docs/api" theme="onDark">
                 API Docs
               </RadLink>
             </li>
             <li style={styles.navListItem}>
-              <RadLink destination="internal" href="#" theme="onDark">
+              <RadLink destination="internal" href="docs/faq" theme="onDark">
                 F.A.Q.
               </RadLink>
             </li>

@@ -5,6 +5,7 @@
   "main": "webpack.config.dev.js",
   "scripts": {
     "start": "builder run dev",
+    "dev": "webpack-dev-server --port 3000 --config node_modules/builder-docs-archetype/config/webpack/webpack.config.dev.js --history-api-fallback",
     "test": "builder run lint",
     "update-project": "rm -rf node_modules/radium && npm update radium"
   },
@@ -19,25 +20,26 @@
   },
   "homepage": "https://github.com/FormidableLabs/radium-docs#readme",
   "devDependencies": {
-    "builder-docs-archetype-dev": "^1.0.0",
-    "react-docgen": "2.7.0"
+    "builder-docs-archetype-dev": "^1.0.5"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.5.0",
     "builder": "^2.9.1",
     "builder-docs-archetype": "^1.0.5",
     "chai": "^3.2.0",
-    "ecology": "^1.5.0",
-    "formidable-landers": "^3.0.1",
+    "color": "^0.11.3",
+    "ecology": "^1.5.2",
+    "formidable-landers": "^3.1.0",
     "history": "~1.17.0",
     "marked": "^0.3.5",
-    "prismjs": "^1.4.1",
-    "radium": "latest",
+    "prismjs": "^1.5.1",
+    "radium": "*",
     "radium-grid": "^2.0.1",
-    "react": "15.2.0",
-    "react-dom": "15.2.0",
-    "react-ga": "^1.5.0",
+    "react": "15.2.1",
+    "react-dom": "15.2.1",
+    "react-ga": "^2.1.1",
     "react-router": "^2.0.1",
+    "react-router-scroll": "^0.2.0",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
   }
