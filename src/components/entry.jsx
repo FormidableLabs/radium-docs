@@ -1,14 +1,18 @@
 import React from "react";
 import { render } from "react-dom";
-import { Router, useRouterHistory, applyRouterMiddleware } from "react-router";
+import { Router, useRouterHistory, browserHistory, applyRouterMiddleware } from "react-router";
 import useScroll from "react-router-scroll";
 import routes from "../routes";
 import { useBasename } from "history";
 import createBrowserHistory from "history/lib/createBrowserHistory";
 
-const history = useRouterHistory(useBasename(createBrowserHistory))({
-  basename: "/"
-});
+let history = browserHistory;
+
+if (process.env.NODE_ENV === "production") {
+  history = useRouterHistory(useBasename(createBrowserHistory))({
+    basename: "/open-source/radium"
+  });
+}
 
 render(
   <Router
