@@ -12,9 +12,15 @@ class Docs extends React.Component {
       docsComponent: null,
       menuOpen: true
     };
+    this.collapseMenuForSmallerScreens = this.collapseMenuForSmallerScreens.bind(this);
   }
 
   componentWillMount() {
+    // Check for window, check window size, and add event listener
+    if (typeof window !== "undefined" && window.__STATIC_GENERATOR !== true) {
+      this.collapseMenuForSmallerScreens();
+      window.addEventListener("resize", this.collapseMenuForSmallerScreens);
+    }
     this.setState({
       docsComponent: find(documents, {
         slug: this.props.params.document || "getting-started"
@@ -30,12 +36,26 @@ class Docs extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    // Remove event listener
+    if (typeof window !== "undefined" && window.__STATIC_GENERATOR !== true) {
+      window.removeEventListener("resize", this.collapseMenuForSmallerScreens);
+    }
+  }
+
+  collapseMenuForSmallerScreens() {
+    const breakpoint = "945px";
+    if (window.matchMedia(`(max-width: ${breakpoint})`).matches && this.state.menuOpen) {
+      this.setState({ menuOpen: false });
+    }
+  }
+
   toggleMenu() {
-    this.setState({menuOpen: !this.state.menuOpen});
+    this.setState({ menuOpen: !this.state.menuOpen });
   }
 
   getStyles() {
-    const sidebarWidth = 240;
+    const sidebarWidth = 230;
     const transition = "300ms ease";
 
     return {
@@ -49,7 +69,7 @@ class Docs extends React.Component {
         boxShadow: "-3px -3px 10px rgba(0,0,0,.5)",
         position: this.state.menuOpen ? "relative" : "absolute",
         flex: "1 1 auto",
-        transform: `translateX(${this.state.menuOpen ? "0px" : "-240px"})`,
+        transform: `translateX(${this.state.menuOpen ? "0px" : `-${sidebarWidth}px`})`,
         width: "100%",
         transition: `all ${transition}`
       },
@@ -59,7 +79,7 @@ class Docs extends React.Component {
         display: "flex",
         flex: `0 0 ${sidebarWidth}px`,
         flexDirection: "column",
-        transform: `translateX(${this.state.menuOpen ? "0px" : "-240px"})`,
+        transform: `translateX(${this.state.menuOpen ? "0px" : `-${sidebarWidth}px`})`,
         transition: `all ${transition}`
       }
     };
