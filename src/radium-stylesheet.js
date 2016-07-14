@@ -28,8 +28,6 @@ const codeStyles = {
 // Stylesheet
 export default {
   "*, *:before, *:after": {
-    WebkitBoxSizing: "inherit",
-    MozBoxSizing: "inherit",
     boxSizing: "inherit"
   },
   html: {
