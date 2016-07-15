@@ -9,7 +9,7 @@ class Sidebar extends React.Component {
       container: {
         padding: `${theme.gutter / 2}px`,
         backgroundColor: "#050505",
-        backgroundImage: "url(../static/bg-radium.jpg)",
+        backgroundImage: "url(./static/bg-radium.jpg)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "bottom left"
