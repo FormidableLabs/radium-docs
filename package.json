@@ -34,7 +34,6 @@
     "marked": "^0.3.5",
     "prismjs": "^1.5.1",
     "radium": "*",
-    "radium-grid": "^2.0.1",
     "react": "15.2.1",
     "react-dom": "15.2.1",
     "react-ga": "^2.1.1",
