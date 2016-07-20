@@ -121,7 +121,7 @@ class Home extends React.Component {
           <h2 style={styles.displayCopy}>Documentation</h2>
           <p style={styles.copy}>Find guides, explore examples, and reference our API documentation.</p>
           <RadiumButton styleOverrides={{marginTop: "1.25rem"}} size="large">
-            <RadiumLink destination="internal" href="docs" theme="onDark">
+            <RadiumLink destination="internal" href="/docs" theme="onDark">
               View Radium Docs
             </RadiumLink>
           </RadiumButton>
