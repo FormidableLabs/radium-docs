@@ -43,6 +43,10 @@ class Docs extends React.Component {
     }
   }
 
+  getChildContext() {
+    return { location: this.props.location };
+  }
+
   collapseMenuForSmallerScreens() {
     const breakpoint = "945px";
     if (window.matchMedia(`(max-width: ${breakpoint})`).matches && this.state.menuOpen) {
@@ -104,7 +108,12 @@ class Docs extends React.Component {
 }
 
 Docs.propTypes = {
-  params: React.PropTypes.object.isRequired
+  params: React.PropTypes.object.isRequired,
+  location: React.PropTypes.object.isRequired
+};
+
+Docs.childContextTypes = {
+  location: React.PropTypes.object
 };
 
 export default Radium(Docs);

@@ -2,9 +2,11 @@ import React from "react";
 import Radium from "radium";
 import theme from "../../../radium-theme";
 import RadiumLink from "../../../components/hyperlink";
-import marked from "marked";
 import RADLOGO from "../../../../static/logo-dark.svg";
+import MarkdownIt from "markdown-it";
+import markdownItNamedHeaders from "markdown-it-named-headers";
 import Prism from "prismjs";
+import basename from "../../../basename";
 /* eslint-disable no-unused-vars */
 // add more language support
 import jsx from "prismjs/components/prism-jsx";
@@ -12,12 +14,15 @@ import sh from "prismjs/components/prism-bash";
 import yaml from "prismjs/components/prism-yaml";
 /* eslint-enable no-unused-vars */
 
-
 import { Footer } from "formidable-landers";
 
 class Docs extends React.Component {
   componentDidMount() {
     Prism.highlightAll();
+  }
+
+  componentWillMount() {
+    this.setMarkdownRenderer(this.context.location.pathname);
   }
 
   componentDidUpdate(prevProps) {
@@ -27,6 +32,41 @@ class Docs extends React.Component {
       Prism.highlightAll();
     }
   }
+
+  componentWillUpdate(nextProps, nextState, nextContext) {
+    // Pathname has changed
+    if (nextContext.location.pathname !== this.context.location.pathname) {
+      this.setMarkdownRenderer(nextContext.location.pathname);
+    }
+  }
+
+  /* eslint-disable camelcase, max-params */
+  // Create a markdown renderer that builds relative links
+  // based on the currentPath and site's base href
+  setMarkdownRenderer(currentPath) {
+    const md = new MarkdownIt({ html: true });
+    md.use(markdownItNamedHeaders);
+
+    // store the original rule
+    const defaultRender = md.renderer.rules.link_open || function (tokens, idx, options, env, renderer) {
+      return renderer.renderToken(tokens, idx, options);
+    };
+
+    // Update anchor links to include the basename
+    md.renderer.rules.link_open = function (tokens, idx, options, env, renderer) {
+      const aIndex = tokens[idx].attrIndex("href");
+      if (aIndex >= 0) {
+        const href = tokens[idx].attrs[aIndex][1];
+        if (href.indexOf("#") === 0) {
+          tokens[idx].attrs[aIndex][1] = `${basename}${currentPath}${href}`;
+        }
+      }
+      return defaultRender(tokens, idx, options, env, renderer);
+    };
+
+    this.md = md;
+  }
+  /* eslint-enable camelcase, max-params */
 
   getStyles() {
     const headerHeight = `50px`;
@@ -110,7 +150,7 @@ class Docs extends React.Component {
           ref="docContainer"
           className="DocumentContainer"
         >
-          <div className="Documentation" dangerouslySetInnerHTML={{__html: marked(this.props.docs)}} />
+          <div className="Documentation" dangerouslySetInnerHTML={{__html: this.md.render(this.props.docs)}} />
           <Footer
             background={theme.lighterGray}
             logoColor="black"
@@ -129,6 +169,10 @@ Docs.propTypes = {
   layoutStyles: React.PropTypes.object,
   docs: React.PropTypes.string.isRequired,
   handleMenuToggle: React.PropTypes.func
+};
+
+Docs.contextTypes = {
+  location: React.PropTypes.object.isRequired
 };
 
 export default Radium(Docs);

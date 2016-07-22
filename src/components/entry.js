@@ -7,17 +7,14 @@ import useScroll from "react-router-scroll";
 
 import Index from "../../templates/index.hbs";
 import routes from "../routes";
-
-const routing = {
-  base: process.env.NODE_ENV === "production" ? "/open-source/radium" : ""
-};
+import basename from "../basename";
 
 // Client render (optional):
 // `static-site-generator-webpack-plugin` supports shimming browser globals
 // so instead of checking whether the document is undefined (always false),
 // Check whether it’s being shimmed
 if (typeof window !== "undefined" && window.__STATIC_GENERATOR !== true) { //eslint-disable-line no-undef
-  const history = useRouterHistory(createHistory)({ basename: routing.base });
+  const history = useRouterHistory(createHistory)({ basename });
   render(
     <Router
       history={history}
@@ -36,7 +33,7 @@ export default (locals, callback) => {
     callback(null, Index({
       content: renderToString(<RouterContext {...renderProps} />),
       bundleJs: locals.assets.main,
-      baseHref: `${routing.base}/`
+      baseHref: `${basename}/`
     }));
   });
 };
