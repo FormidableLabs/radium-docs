@@ -30,7 +30,8 @@ module.exports = {
   // Media Queries
   // --------
   mediaSizes: {
-    medium: "only screen and (min-width: 44em)"
+    medium: "only screen and (min-width: 44.063em)",
+    small: "only screen and (max-width: 44em)"
   },
   // ---------------------
   // CodeMirror Theme
