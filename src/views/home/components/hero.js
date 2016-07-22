@@ -10,12 +10,17 @@ class Hero extends React.Component {
   getHeroStyles() {
     return {
       header: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        minHeight: "580px",
+        height: "80vh",
+        padding: "5% .5rem 1rem",
         backgroundColor: "#050505",
         backgroundImage: "url(./static/bg-radium.jpg)",
         backgroundPosition: "bottom center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        height: "80vh",
         [`@media ${theme.mediaSizes.medium}`]: {
           display: "flex",
           flexDirection: "column",
@@ -23,50 +28,46 @@ class Hero extends React.Component {
           justifyContent: "space-around",
           minHeight: "650px",
           padding: "10% 1rem 2rem"
-        },
-        [`@media ${theme.mediaSizes.small}`]: {
-          minHeight: "580px",
-          padding: "5% .5rem 1rem"
         }
       },
       intro: {
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "center",
+        flexDirection: "column",
+        flexWrap: "wrap",
         margin: "auto",
         padding: 0,
         width: "auto",
         [`@media ${theme.mediaSizes.medium}`]: {
-          flexWrap: "nowrap"
-        },
-        [`@media ${theme.mediaSizes.small}`]: {
-          justifyContent: "center",
-          flexDirection: "column",
-          flexWrap: "wrap"
+          flexWrap: "nowrap",
+          flexDirection: "row",
+          justifyContent: "space-between"
         }
       },
       logo: {
+        maxWidth: "180px",
+        margin: "0 auto",
         [`@media ${theme.mediaSizes.medium}`]: {
+          maxWidth: "initial",
           flex: "0 1 360px",
-          marginRight: "3.75rem"
-        },
-        [`@media ${theme.mediaSizes.small}`]: {
-          maxWidth: "180px",
-          margin: "0 auto"
+          margin: "0 3.75rem 0 0"
         }
       },
       copy: {
+        textAlign: "center",
         color: theme.white,
         flex: "1 1 auto",
-        [`@media ${theme.mediaSizes.small}`]: {
-          textAlign: "center"
+        [`@media ${theme.mediaSizes.medium}`]: {
+          textAlign: "left"
         }
       },
       heading: {
+        margin: "0em",
         fontFamily: theme.sansSerif,
         MozOsxFontSmoothing: "grayscale",
         WebkitFontSmoothing: "antialiased",
-        [`@media ${theme.mediaSizes.small}`]: {
-          margin: "0"
+        [`@media ${theme.mediaSizes.medium}`]: {
+          margin: ".25em 0"
         }
       },
       paragraph: {
@@ -74,22 +75,19 @@ class Hero extends React.Component {
         fontSize: "0.875rem",
         lineHeight: "1.5",
         maxWidth: "30em",
+        margin: "0 auto",
         MozOsxFontSmoothing: "grayscale",
-        WebkitFontSmoothing: "antialiased",
-        [`@media ${theme.mediaSizes.small}`]: {
-          margin: "0 auto"
-        }
+        WebkitFontSmoothing: "antialiased"
       },
       installer: {
         backgroundColor: theme.charcoal,
-        marginTop: "2rem",
-        marginBottom: "5rem",
+        margin: "2rem auto",
+        padding: "1em",
         maxWidth: "30em",
-        padding: "2em",
         textAlign: "center",
-        [`@media ${theme.mediaSizes.small}`]: {
-          margin: "2rem auto",
-          padding: "1em"
+        [`@media ${theme.mediaSizes.medium}`]: {
+          margin: "2rem 0 5rem",
+          padding: "2em"
         }
       },
       installerHeading: {
