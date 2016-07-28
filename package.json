@@ -7,7 +7,9 @@
     "start": "builder run dev",
     "dev": "webpack-dev-server --port 3000 --config node_modules/builder-docs-archetype/config/webpack/webpack.config.dev.js --history-api-fallback",
     "test": "builder run lint",
-    "update-project": "rm -rf node_modules/radium && npm update radium"
+    "update-project": "rm -rf node_modules/radium && npm update radium",
+    "server-static-prod": "ecstatic --port 8080 --baseDir /open-source/radium build",
+    "test-func-static-prod": "TEST_FUNC_BASE_DIR=/open-source/radium builder run test-func-static"
   },
   "repository": {
     "type": "git",
@@ -20,12 +22,12 @@
   },
   "homepage": "https://github.com/FormidableLabs/radium-docs#readme",
   "devDependencies": {
-    "builder-docs-archetype-dev": "^2.0.1"
+    "builder-docs-archetype-dev": "^3.0.0"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.5.0",
     "builder": "^2.9.1",
-    "builder-docs-archetype": "^2.0.1",
+    "builder-docs-archetype": "^3.0.0",
     "chai": "^3.2.0",
     "color": "^0.11.3",
     "ecology": "^1.5.2",

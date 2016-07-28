@@ -2,9 +2,9 @@
 
 module.exports = [
   "/",
-  "docs",
-  "docs/api",
-  "docs/faq",
-  "docs/guide",
-  "docs/getting-started"
+  "/docs",
+  "/docs/api",
+  "/docs/faq",
+  "/docs/guide",
+  "/docs/getting-started"
 ];
