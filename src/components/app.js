@@ -1,15 +1,10 @@
 import React from "react";
 import Radium, { Style, StyleRoot } from "radium";
-import ga from "react-ga";
 
 // base stylesheet
 import stylesheet from "../radium-stylesheet";
 
 class App extends React.Component {
-  componentDidMount() {
-    ga.initialize("UA-43290258-1");
-  }
-
   render() {
     const isBrowser = typeof window !== "undefined" && window.__STATIC_GENERATOR !== true;
     return (
