@@ -1,5 +1,5 @@
 import React from "react";
-import Radium from "radium";
+import Radium, { Style } from "radium";
 import Hero from "./components/hero";
 import Demo from "./components/demo";
 import RadiumLink from "../../components/hyperlink";
@@ -19,6 +19,10 @@ class Home extends React.Component {
         margin: `${theme.gutter * 2}px auto`,
         maxWidth: "720px",
         WebkitFontSmoothing: "antialiased"
+      },
+      commonHeadsFoots: {
+        margin: "0 auto",
+        maxWidth: "840px"
       },
       displayCopy: {
         color: theme.charcoal,
@@ -68,14 +72,25 @@ class Home extends React.Component {
 
   render() {
     const styles = this.getStyles();
+    const trademark = <div className="default">Radium&reg; is a trademark of Formidable Labs, Inc.</div>;
 
     return (
       <main role="main">
         <Header
-          background={theme.charcoal}
-          linkStyles={styles.headerLink}
-          styleOverrides={{padding: "1.5rem"}}
+          containerStyle={styles.commonHeadsFoots}
+        >
+        <Style
+          scopeSelector=".formidableHeader-logo"
+          rules={{
+            margin: "0 auto !important"
+          }}
         />
+          <div className="default">
+            <a href="/docs">Docs</a>
+            <a href="//github.com/FormidableLabs/radium/issues">Issues</a>
+            <a href="//github.com/FormidableLabs/radium">View Source on GitHub</a>
+          </div>
+        </Header>
         <Hero />
         <section id="whyRadium" style={styles.content}>
           <section style={styles.contentBlock}>
@@ -127,13 +142,10 @@ class Home extends React.Component {
           </RadiumButton>
         </section>
         <Footer
-          background={"#050505 url(./static/bg-radium.jpg) no-repeat bottom center"}
-          logoColor="white"
-          linkStyles={styles.footerLink}
-          styleOverrides={styles.footer}
-        >
-          <p style={{marginTop: "2.5em", fontSize: "14px"}}>Radium is a trademark of Formidable Labs, Inc.</p>
-        </Footer>
+          containerStyle={styles.commonHeadsFoots}
+          style={{margin: 0}}
+          trademark={trademark}
+        />
       </main>
     );
   }

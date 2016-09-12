@@ -134,6 +134,7 @@ class Docs extends React.Component {
 
   render() {
     const styles = this.getStyles();
+    const trademark = <div className="default">Radium&reg; is a trademark of Formidable Labs, Inc.</div>;
     return (
       <section style={[styles.container, this.props.layoutStyles]}>
         <header style={styles.header}>
@@ -152,13 +153,17 @@ class Docs extends React.Component {
         >
           <div className="Documentation" dangerouslySetInnerHTML={{__html: this.md.render(this.props.docs)}} />
           <Footer
-            background={theme.lighterGray}
-            logoColor="black"
-            linkStyles={styles.footerLink}
-            styleOverrides={styles.footer}
-          >
-            <p style={{marginTop: "1em", fontSize: "14px"}}>Radium is a trademark of Formidable Labs, Inc.</p>
-          </Footer>
+            theme="light"
+            containerStyle={{
+              margin: "0 auto",
+              padding: `5rem ${theme.gutter}px 6rem`,
+              maxWidth: "800px"
+            }}
+            style={{
+              borderTop: `1px solid rgb(238, 238, 238)`
+            }}
+            trademark={trademark}
+          />
         </section>
       </section>
     );

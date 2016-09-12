@@ -58,7 +58,8 @@ export default {
     marginTop: "0"
   },
   "h1, h2, h3, h4, h5, h6, hgroup": {
-    fontFamily: theme.sansSerif
+    fontFamily: theme.sansSerif,
+    fontWeight: "normal"
   },
   p: {
     fontSize: "1rem",
