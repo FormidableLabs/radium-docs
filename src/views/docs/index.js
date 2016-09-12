@@ -5,6 +5,8 @@ import Documentation from "./components/docs";
 import { find } from "lodash";
 import { documents } from "./components/radium-files";
 
+import { Header } from "formidable-landers";
+
 class Docs extends React.Component {
   constructor(props) {
     super(props);
@@ -12,14 +14,14 @@ class Docs extends React.Component {
       docsComponent: null,
       menuOpen: true
     };
-    this.collapseMenuForSmallerScreens = this.collapseMenuForSmallerScreens.bind(this);
+    this.toggleMenuOnResize = this.toggleMenuOnResize.bind(this);
   }
 
   componentWillMount() {
     // Check for window, check window size, and add event listener
     if (typeof window !== "undefined" && window.__STATIC_GENERATOR !== true) {
-      this.collapseMenuForSmallerScreens();
-      window.addEventListener("resize", this.collapseMenuForSmallerScreens);
+      this.toggleMenuOnResize();
+      window.addEventListener("resize", this.toggleMenuOnResize);
     }
     this.setState({
       docsComponent: find(documents, {
@@ -39,7 +41,7 @@ class Docs extends React.Component {
   componentWillUnmount() {
     // Remove event listener
     if (typeof window !== "undefined" && window.__STATIC_GENERATOR !== true) {
-      window.removeEventListener("resize", this.collapseMenuForSmallerScreens);
+      window.removeEventListener("resize", this.toggleMenuOnResize);
     }
   }
 
@@ -47,10 +49,13 @@ class Docs extends React.Component {
     return { location: this.props.location };
   }
 
-  collapseMenuForSmallerScreens() {
-    const breakpoint = "945px";
-    if (window.matchMedia(`(max-width: ${breakpoint})`).matches && this.state.menuOpen) {
+  toggleMenuOnResize() {
+    const breakpoint = 945;
+    if (window.matchMedia(`(max-width: ${breakpoint}px)`).matches && this.state.menuOpen) {
       this.setState({ menuOpen: false });
+    }
+    if (window.matchMedia(`(min-width: ${breakpoint + 1}px)`).matches && !this.state.menuOpen) {
+      this.setState({ menuOpen: true });
     }
   }
 
@@ -61,6 +66,7 @@ class Docs extends React.Component {
   getStyles() {
     const sidebarWidth = 230;
     const transition = "300ms ease";
+    const transform = this.state.menuOpen ? "0px" : `${sidebarWidth * -1}px`;
 
     return {
       main: {
@@ -71,9 +77,8 @@ class Docs extends React.Component {
       documentation: {
         zIndex: 2,
         boxShadow: "-3px -3px 10px rgba(0,0,0,.5)",
-        position: this.state.menuOpen ? "relative" : "absolute",
         flex: "1 1 auto",
-        transform: `translateX(${this.state.menuOpen ? "0px" : `-${sidebarWidth}px`})`,
+        marginLeft: transform,
         width: "100%",
         transition: `all ${transition}`
       },
@@ -83,7 +88,7 @@ class Docs extends React.Component {
         display: "flex",
         flex: `0 0 ${sidebarWidth}px`,
         flexDirection: "column",
-        transform: `translateX(${this.state.menuOpen ? "0px" : `-${sidebarWidth}px`})`,
+        transform: `translateX(${transform})`,
         transition: `all ${transition}`
       }
     };
@@ -92,17 +97,28 @@ class Docs extends React.Component {
   render() {
     const styles = this.getStyles();
     return (
-      <main style={styles.main}>
-        <Sidebar
-          layoutStyles={styles.sidebar}
-          currentDocument={this.props.params.document || "getting-started"}
-        />
-        <Documentation
-          layoutStyles={styles.documentation}
-          docs={this.state.docsComponent.docs}
-          handleMenuToggle={this.toggleMenu.bind(this)}
-        />
-      </main>
+      <div
+        style={{display: "flex", flexDirection: "column", height: "100%"}}
+      >
+        <Header padding="1.5rem 1rem">
+          <div className="default">
+            <a href="/docs">Docs</a>
+            <a href="//github.com/FormidableLabs/radium/issues">Issues</a>
+            <a href="//github.com/FormidableLabs/radium">View Source on GitHub</a>
+          </div>
+        </Header>
+        <main style={styles.main}>
+          <Sidebar
+            layoutStyles={styles.sidebar}
+            currentDocument={this.props.params.document || "getting-started"}
+          />
+          <Documentation
+            layoutStyles={styles.documentation}
+            docs={this.state.docsComponent.docs}
+            handleMenuToggle={this.toggleMenu.bind(this)}
+          />
+        </main>
+      </div>
     );
   }
 }
