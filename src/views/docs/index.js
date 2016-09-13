@@ -4,6 +4,7 @@ import Sidebar from "./components/sidebar";
 import Documentation from "./components/docs";
 import { find } from "lodash";
 import { documents } from "./components/radium-files";
+import RadiumLink from "../../components/hyperlink";
 
 import { Header } from "formidable-landers";
 
@@ -102,9 +103,15 @@ class Docs extends React.Component {
       >
         <Header padding="1.5rem 1rem">
           <div className="default">
-            <a href="/docs">Docs</a>
-            <a href="//github.com/FormidableLabs/radium/issues">Issues</a>
-            <a href="//github.com/FormidableLabs/radium">View Source on GitHub</a>
+            <RadiumLink destination="internal" href="/docs" theme="none">
+              Docs
+            </RadiumLink>
+            <RadiumLink destination="external" href="https://github.com/FormidableLabs/radium/issues" theme="none">
+              Issues
+            </RadiumLink>
+            <RadiumLink destination="external" href="https://github.com/FormidableLabs/radium" theme="none">
+              View Source on GitHub
+            </RadiumLink>
           </div>
         </Header>
         <main style={styles.main}>

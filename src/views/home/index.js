@@ -86,9 +86,15 @@ class Home extends React.Component {
           }}
         />
           <div className="default">
-            <a href="/docs">Docs</a>
-            <a href="//github.com/FormidableLabs/radium/issues">Issues</a>
-            <a href="//github.com/FormidableLabs/radium">View Source on GitHub</a>
+            <RadiumLink destination="internal" href="/docs" theme="none">
+              Docs
+            </RadiumLink>
+            <RadiumLink destination="external" href="https://github.com/FormidableLabs/radium/issues" theme="none">
+              Issues
+            </RadiumLink>
+            <RadiumLink destination="external" href="https://github.com/FormidableLabs/radium" theme="none">
+              View Source on GitHub
+            </RadiumLink>
           </div>
         </Header>
         <Hero />

@@ -31,6 +31,12 @@ class Hyperlink extends React.Component {
         ":hover": {
           color: settings.lightGray
         }
+      },
+      none: {
+        color: "auto",
+        ":hover": {
+          color: "auto"
+        }
       }
     };
   }
@@ -70,7 +76,7 @@ Hyperlink.propTypes = {
   children: React.PropTypes.node,
   destination: React.PropTypes.oneOf(["internal", "external"]).isRequired,
   href: React.PropTypes.string.isRequired,
-  theme: React.PropTypes.oneOf(["onDark"]),
+  theme: React.PropTypes.oneOf(["onDark", "none"]),
   style: React.PropTypes.object
 };
 
