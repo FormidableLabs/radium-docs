@@ -4,7 +4,6 @@
   "description": "Radium Documentation Site",
   "main": "webpack.config.dev.js",
   "scripts": {
-    "dev": "webpack-dev-server --port 3000 --config node_modules/builder-docs-archetype/config/webpack/webpack.config.dev.js --history-api-fallback",
     "preversion": "builder run npm:preversion",
     "start": "builder run dev",
     "test": "builder run lint",
@@ -21,12 +20,12 @@
   },
   "homepage": "https://github.com/FormidableLabs/radium-docs#readme",
   "devDependencies": {
-    "builder-docs-archetype-dev": "^4.2.1"
+    "builder-docs-archetype-dev": "^4.2.2"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.5.0",
     "builder": "^3.1.0",
-    "builder-docs-archetype": "^4.2.1",
+    "builder-docs-archetype": "^4.2.2",
     "chai": "^3.2.0",
     "color": "^0.11.3",
     "ecology": "^1.6.1",
