@@ -101,7 +101,7 @@ class Home extends React.Component {
         <section id="whyRadium" style={styles.content}>
           <section style={styles.contentBlock}>
             <h1 style={[styles.displayCopy, { textAlign: "center" }]}>Why Radium</h1>
-            <p style={styles.copy}>Radium unlocks the power of React & inline styling by enabling support for CSS psuedo selectors, media queries, vendor-prefixing, and much more through a simple interface.</p>
+            <p style={styles.copy}>Radium unlocks the power of React & inline styling by enabling support for CSS pseudo selectors, media queries, vendor-prefixing, and much more through a simple interface.</p>
             <Demo src={require("!!raw!./demos/familiar.md")} />
           </section>
           <section style={styles.contentBlock}>
