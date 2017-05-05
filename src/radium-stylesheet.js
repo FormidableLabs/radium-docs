@@ -167,69 +167,12 @@ export default {
     WebkitFontSmoothing: "antialiased"
   },
   ".Documentation code[class*='language-'], .Documentation pre[class*='language-']": codeStyles,
-  /*
-   * Interactive/Component Playground
-   * .Interactive
-   * |- .playground
-   *    |- .playgroundCode
-   *    |  |- .playgroundStage
-   *    |- .playgroundPreview
-   *       |- div
-   *          |- .playgroundError
-   *          |- .previewArea
+  /**
+   * ReactLive Theme/Color Palette
    */
-  ".Interactive .playground": {
-    display: "flex",
-    flexDirection: "column",
-    padding: 0
-  },
-  ".Interactive .playgroundCode": {
-    order: "1",
-    padding: 0,
-    margin: 0,
-    WebkitFontSmoothing: "subpixel-antialiased"
-  },
-  ".playgroundCode .playgroundStage": {
-    position: "relative",
-    boxSizing: "border-box",
-    padding: "10px",
-    margin: 0
-  },
-  ".Interactive .playgroundStage:after": {
-    content: "EDITOR",
-    position: "absolute",
-    right: 0,
-    top: 0,
-    color: theme.codeMirror.gray,
-    fontFamily: theme.monospace,
-    letterSpacing: "0.09em",
-    fontSize: "12px",
-    margin: "10px",
-    lineHeight: 1
-  },
-  ".Interactive .playgroundPreview": {
-    position: "relative",
-    textAlign: "center",
-    order: "0",
-    padding: `${theme.gutter * 2}px ${theme.gutter}px`,
-    background: theme.lighterGray,
-    border: `1px solid ${theme.lightGray}`
-  },
-  ".Interactive .playgroundPreview:after": {
-    content: "PREVIEW",
-    position: "absolute",
-    right: 0,
-    top: 0,
-    color: theme.lightGray,
-    fontFamily: theme.monospace,
-    letterSpacing: "0.09em",
-    fontSize: "12px",
-    margin: "10px",
-    lineHeight: 1
-  },
-  ".Interactive .playgroundError": {
-    background: theme.paleRed,
-    color: theme.whiteSand,
+  ".react-live-error": {
+    background: theme.reactLive.red,
+    color: theme.white,
     fontFamily: theme.monospace,
     fontSize: "1rem",
     fontWeight: "normal",
@@ -240,19 +183,6 @@ export default {
     whiteSpace: "pre",
     width: "100%"
   },
-  ".Interactive pre, .CodeMirror-code": codeStyles,
-  ".CodeMirror": {
-    background: "none !important"
-  },
-  /**
-   * React Live Playground Theme/Color Palette
-   */
-  ".react-live-error": {
-    background: theme.red,
-    color: theme.white,
-    fontSize: ".9em",
-    padding: "10px"
-  },
   ".react-live-preview": {
     position: "relative",
     "text-align": "center",
@@ -262,7 +192,7 @@ export default {
     border: "1px solid #cecece"
   },
   ".prism-code.LiveEditor": {
-    background: theme.codeMirror.bg,
+    background: theme.reactLive.bg,
     boxSizing: "border-box",
     color: theme.white,
     fontSize: ".9em",
@@ -274,85 +204,7 @@ export default {
     transition: "background-color 195ms ease-in"
   },
   ".prism-code.LiveEditor:focus": {
-    background: theme.codeMirror.bgFocused,
+    background: theme.reactLive.bgFocused,
     transition: "background 225ms ease-out"
-  },
-  /**
-   * Ecology Playground Theme/Color Palette
-   */
-  ".playgroundStage": {
-    background: theme.codeMirror.bg,
-    color: theme.white,
-    transition: "background-color 195ms ease-in"
-  },
-  ".playgroundStage.ReactCodeMirror--focused": {
-    background: theme.codeMirror.bgFocused,
-    transition: "background-color 250ms ease-out"
-  },
-  ".cm-s-elegant div.CodeMirror-cursor": {
-    borderLeft: "1px solid white !important"
-  },
-  ".cm-s-elegant div.CodeMirror-selected": {
-    background: `${theme.codeMirror.selected} !important`
-  },
-  ".cm-s-elegant span.cm-comment": {
-    color: theme.codeMirror.gray
-  },
-  ".cm-s-elegant span.cm-operater": {
-    color: theme.codeMirror.softCyan
-  },
-  ".cm-s-elegant span.cm-keyword": {
-    color: theme.codeMirror.blue
-  },
-  ".cm-s-elegant span.cm-atom": {
-    color: theme.codeMirror.cyan
-  },
-  ".cm-s-elegant span.cm-def": {
-    color: theme.codeMirror.yellow
-  },
-  ".cm-s-elegant span.cm-attribute": {
-    color: theme.codeMirror.yellow
-  },
-  ".cm-s-elegant span.cm-variable": {
-    color: theme.codeMirror.lime
-  },
-  ".cm-s-elegant span.cm-variable-2": {
-    color: theme.codeMirror.cement
-  },
-  ".cm-s-elegant span.cm-string": {
-    color: theme.codeMirror.lightCement
-  },
-  ".cm-s-elegant span.cm-string-2": {
-    color: theme.codeMirror.lime
-  },
-  ".cm-s-elegant span.cm-number": {
-    color: theme.codeMirror.purple
-  },
-  ".cm-s-elegant span.cm-tag": {
-    color: theme.codeMirror.red
-  },
-  ".cm-s-elegant span.cm-property": {
-    color: theme.codeMirror.cyan
-  },
-  ".cm-s-elegant span.cm-qualifier": {
-    color: theme.codeMirror.orange
-  },
-  ".cm-s-elegant span.cm-meta": {
-    color: theme.codeMirror.cyan
-  },
-  ".cm-s-elegant span.cm-header": {
-    color: theme.codeMirror.red
-  },
-  ".cm-s-elegant span.cm-operator, .CodeMirror pre": {
-    color: theme.codeMirror.cement
-  },
-  ".cm-s-elegant span.CodeMirror-matchingbracket": {
-    boxSizing: "border-box",
-    background: "transparent",
-    borderBottom: "1px solid"
-  },
-  ".cm-s-elegant span.CodeMirror-nonmatchingbracket": {
-    borderBottom: "1px solid",
-    background: "none"
   }
 };
