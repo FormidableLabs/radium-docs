@@ -1,4 +1,4 @@
-```playground_norender
+
 // import React from 'react';
 // import ReactDOM from 'react-dom';
 // import Radium from 'radium';
@@ -55,6 +55,5 @@ Alert.defaultProps = { type: "notification" };
 
 const Component = Radium(Alert);
 
-ReactDOM.render(<Component message="This is an alert component" />, mountNode);
+render(<Component message="This is an alert component" />);
 
-```

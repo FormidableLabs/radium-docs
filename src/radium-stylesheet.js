@@ -245,6 +245,39 @@ export default {
     background: "none !important"
   },
   /**
+   * React Live Playground Theme/Color Palette
+   */
+  ".react-live-error": {
+    background: theme.red,
+    color: theme.white,
+    fontSize: ".9em",
+    padding: "10px"
+  },
+  ".react-live-preview": {
+    position: "relative",
+    "text-align": "center",
+    order: "0",
+    padding: "40px 20px",
+    background: "#eee",
+    border: "1px solid #cecece"
+  },
+  ".prism-code.LiveEditor": {
+    background: theme.codeMirror.bg,
+    boxSizing: "border-box",
+    color: theme.white,
+    fontSize: ".9em",
+    height: "350px",
+    margin: 0,
+    overflow: "scroll",
+    position: "relative",
+    padding: "10px",
+    transition: "background-color 195ms ease-in"
+  },
+  ".prism-code.LiveEditor:focus": {
+    background: theme.codeMirror.bgFocused,
+    transition: "background 225ms ease-out"
+  },
+  /**
    * Ecology Playground Theme/Color Palette
    */
   ".playgroundStage": {
