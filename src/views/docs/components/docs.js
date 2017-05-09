@@ -5,7 +5,7 @@ import RadiumLink from "../../../components/hyperlink";
 import RADLOGO from "../../../../static/logo-dark.svg";
 import MarkdownIt from "markdown-it";
 import markdownItNamedHeaders from "markdown-it-named-headers";
-import Prism from "prismjs";
+import { highlightAll } from "prismjs/components/prism-core";
 import basename from "../../../basename";
 /* eslint-disable no-unused-vars */
 // add more language support
@@ -18,7 +18,7 @@ import { Footer } from "formidable-landers";
 
 class Docs extends React.Component {
   componentDidMount() {
-    Prism.highlightAll();
+    highlightAll();
   }
 
   componentWillMount() {
@@ -29,7 +29,7 @@ class Docs extends React.Component {
     // Page-change occured
     if (prevProps.docs !== this.props.docs) {
       this.refs.docContainer.scrollTop = 0;
-      Prism.highlightAll();
+      highlightAll();
     }
   }
 

@@ -33,9 +33,9 @@ module.exports = {
     medium: "only screen and (min-width: 44.063em)"
   },
   // ---------------------
-  // CodeMirror Theme
+  // React Live Theme
   // ---------------------
-  codeMirror: {
+  reactLive: {
     bg: "#3C424D",
     bgFocused: "#2F353F",
     selected: "#4B515B",
