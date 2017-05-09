@@ -1,4 +1,3 @@
-```playground
 <Button
   kind="primary" // try changing this to "warning"
   disabled={false}
@@ -32,4 +31,3 @@
 >
 Radium Button
 </Button>
-```
