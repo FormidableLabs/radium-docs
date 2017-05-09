@@ -74,14 +74,27 @@ class Button extends React.Component {
     const { children, theme, size, onClick, disabled, styleOverrides } = this.props;
     const styles = this.getStyles();
 
-    const childrenWithProps = React.Children.map(children,
-     (child) => React.cloneElement(child, {
-       style: [{
-         width: "auto",
-         display: "block",
-         lineHeight: 2
-       }, styles.size[size]]
-     })
+    const childrenWithProps = React.Children.map(children, (child) => {
+      const childStyle = {
+        width: "auto",
+        display: "block",
+        lineHeight: 2,
+        ...styles.size[size]
+      };
+
+      if (typeof child === "string") {
+        return (
+          <span style={[childStyle]}>
+            {child}
+          </span>
+        );
+      }
+
+      return React.cloneElement(child, {
+        style: [childStyle]
+      });
+    }
+
     );
 
     return (
