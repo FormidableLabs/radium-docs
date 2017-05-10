@@ -130,7 +130,7 @@ class Home extends React.Component {
             <h3 style={styles.displayCopy}>Getting Started with Radium</h3>
             <p style={styles.copy}>To install the stable version of Radium:</p>
             <p><code>npm install --save radium</code></p>
-            <p style={styles.copy}>This assumes you are using npm as your package manager. If you don’t, you can <RadiumLink href="https://npmcdn.com/radium/">access these files on npmcdn</RadiumLink> or point your package manager to them.</p>
+            <p style={styles.copy}>This assumes you are using npm as your package manager. If you don’t, you can <RadiumLink href="https://unpkg.com/radium/">access these files on unpkg</RadiumLink> or point your package manager to them.</p>
 
             <p style={styles.copy}>Next, wrap <code>Radium()</code> around your component, like <code>module.exports = Radium(Component)</code>, or <code>Component = Radium(Component)</code>, which works with classes, createClass, and stateless components (functions that take props and return a ReactElement).</p>
 
