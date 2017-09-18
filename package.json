@@ -7,7 +7,7 @@
     "preversion": "builder run npm:preversion",
     "start": "builder run dev",
     "test": "builder run lint",
-    "update-project": "rm -rf node_modules/radium && npm update radium"
+    "update-project": "npm update radium"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "markdown-it": "^7.0.0",
     "markdown-it-named-headers": "0.0.4",
     "prismjs": "^1.5.1",
+    "radium": "^0.19.4",
     "react": "^15.0.1",
     "react-addons-test-utils": "^15.0.1",
     "react-dom": "^15.0.1",
@@ -40,8 +41,5 @@
     "react-router-scroll": "^0.2.0",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
-  },
-  "dependencies": {
-    "radium": "^0.19.4"
   }
 }
