@@ -1,15 +1,15 @@
-\.git
-\.hg
+.git
+.hg
 
-\.DS_Store
-\.project
+.DS_Store
+.project
 bower_components
 node_modules
 npm-debug\.log*
 phantomjsdriver\.log
 
 # Build
-coverage
-Procfile
 build
-yarn.lock
+
+# Install
+yarn-error.log
