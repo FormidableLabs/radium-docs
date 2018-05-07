@@ -1,5 +1,5 @@
 import React from "react";
-import Radium, { Style } from "radium";
+import Radium from "radium";
 import Hero from "./components/hero";
 import Demo from "./components/demo";
 import RadiumLink from "../../components/hyperlink";

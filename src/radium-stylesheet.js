@@ -45,10 +45,9 @@ export default {
   "html, body": {
     overflowX: "hidden"
   },
-
   main: {
     fontSize: "16px",
-    lineHeight: 1.4,
+    lineHeight: 1.4
   },
   "article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary": {
     display: "block"
