@@ -40,12 +40,14 @@ export default {
     boxSizing: "border-box",
     color: theme.black,
     fontFamily: theme.serif,
-    fontSize: "16px",
-    lineHeight: 1.4,
     margin: 0
   },
   "html, body": {
     overflowX: "hidden"
+  },
+  main: {
+    fontSize: "16px",
+    lineHeight: 1.4
   },
   "article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary": {
     display: "block"
