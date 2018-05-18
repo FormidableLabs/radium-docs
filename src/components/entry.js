@@ -45,6 +45,7 @@ export default (locals, callback) => {
     callback(null, Index({
       content: renderToString(<RouterContext {...renderProps} />),
       bundleJs: locals.assets.main,
+      bundleCss: locals.assets.styles,
       baseHref: `${basename}/`
     }));
   });
