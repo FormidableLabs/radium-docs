@@ -41,10 +41,13 @@ export default (locals, callback) => {
 
   const history = createMemoryHistory();
   const location = history.createLocation(locals.path);
+  // Piggyback on top of webpack-stats-plugin output (without i/o) to get CSS file path.
+  const source = JSON.parse(locals.webpackStats.compilation.assets["stats.json"].source());
   match({ routes, location }, (error, redirectLocation, renderProps) => {
     callback(null, Index({
       content: renderToString(<RouterContext {...renderProps} />),
       bundleJs: locals.assets.main,
+      bundleCss: source.assetsByChunkName.main[1], // js is 0, css is 1.
       baseHref: `${basename}/`
     }));
   });
