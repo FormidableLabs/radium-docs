@@ -8,7 +8,7 @@ node_js:
 # Use container-based Travis infrastructure.
 sudo: false
 
-cache: true
+cache: yarn
 
 branches:
   only:
