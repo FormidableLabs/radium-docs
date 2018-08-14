@@ -1,13 +1,13 @@
 {
   "name": "radium-docs",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Radium Documentation Site",
   "main": "webpack.config.dev.js",
   "scripts": {
     "preversion": "builder run npm:preversion",
     "start": "builder run dev",
     "test": "builder run lint",
-    "update-project": "rm -rf node_modules/radium && npm update radium"
+    "update-project": "echo 'Skipping git update. Using npm package.'"
   },
   "repository": {
     "type": "git",
@@ -20,25 +20,23 @@
   },
   "homepage": "https://github.com/FormidableLabs/radium-docs#readme",
   "devDependencies": {
-    "builder-docs-archetype-dev": "^4.2.2"
-  },
-  "dependencies": {
     "babel-preset-stage-1": "^6.5.0",
-    "builder": "^3.1.0",
+    "builder": "^4.0.0",
     "builder-docs-archetype": "^4.2.2",
+    "builder-docs-archetype-dev": "^4.2.2",
     "chai": "^3.2.0",
     "color": "^0.11.3",
     "formidable-landers": "^8.3.2",
     "history": "~1.17.0",
     "markdown-it": "^7.0.0",
     "markdown-it-named-headers": "0.0.4",
-    "prismjs": "^1.5.1",
-    "radium": "*",
+    "prismjs": "1.6.0",
+    "radium": "^0.24.1",
     "react": "^15.0.1",
     "react-addons-test-utils": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-ga": "^2.5.2",
-    "react-live": "^1.4.8",
+    "react-live": "^1.10.1",
     "react-router": "^2.0.1",
     "react-router-scroll": "^0.2.0",
     "sinon": "^1.17.2",
