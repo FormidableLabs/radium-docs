@@ -3386,7 +3386,7 @@ formatio@1.1.1:
   dependencies:
     samsam "~1.1"
 
-formidable-landers@^8.1.7:
+formidable-landers@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/formidable-landers/-/formidable-landers-8.3.2.tgz#71bb8902427b250dc8cd1225b70c1ef42674686b"
   dependencies:
