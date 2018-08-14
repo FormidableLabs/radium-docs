@@ -3,9 +3,12 @@ language: node_js
 node_js:
   - "6"
   - "8"
+  - "10"
 
 # Use container-based Travis infrastructure.
 sudo: false
+
+cache: true
 
 branches:
   only:
@@ -17,5 +20,5 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 script:
-  - npm test
-  - NODE_ENV=production node_modules/.bin/builder run build-static
+  - yarn test --log-level=info
+  - NODE_ENV=production node_modules/.bin/builder run build-static --log-level=info
