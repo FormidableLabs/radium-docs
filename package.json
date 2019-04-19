@@ -1,6 +1,6 @@
 {
   "name": "radium-docs",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "description": "Radium Documentation Site",
   "main": "webpack.config.dev.js",
   "scripts": {
